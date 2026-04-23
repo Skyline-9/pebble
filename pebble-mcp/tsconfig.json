@@ -11,7 +11,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["bun-types"]
+    "types": ["bun"]
   },
   "include": ["src/**/*", "tests/**/*"]
 }
