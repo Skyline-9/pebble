@@ -3,6 +3,8 @@
 # Invoked by CC on SessionStart. Prints JSON with additionalContext for the model.
 set -euo pipefail
 
+export PATH="$HOME/.bun/bin:$PATH"
+
 CACHE="$(pebble-mcp hot-cache-for-cc 2>/dev/null || echo "")"
 
 if [ -z "$CACHE" ]; then

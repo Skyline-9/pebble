@@ -3,6 +3,8 @@
 # Every matched tool use increments the round counter. At threshold, flag the pebble-reviewer.
 set -euo pipefail
 
+export PATH="$HOME/.bun/bin:$PATH"
+
 ROOT="${PEBBLE_ROOT:-$HOME/.pebble}"
 COUNTER_FILE="$ROOT/.droid-rounds"
 THRESHOLD="${PEBBLE_REVIEW_EVERY:-8}"
