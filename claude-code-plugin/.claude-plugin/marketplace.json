@@ -1,0 +1,10 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "pebble-marketplace",
+  "plugins": [
+    {
+      "name": "pebble",
+      "source": "."
+    }
+  ]
+}
