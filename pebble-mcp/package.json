@@ -1,0 +1,26 @@
+{
+  "name": "pebble-mcp",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "module": "src/index.ts",
+  "bin": { "pebble-mcp": "./src/index.ts" },
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "test": "bun test",
+    "typecheck": "bunx tsc --noEmit",
+    "build": "bun build src/index.ts --compile --outfile dist/pebble-mcp"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "ulid": "^2.3.0",
+    "chokidar": "^3.6.0",
+    "proper-lockfile": "^4.1.2",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/proper-lockfile": "^4.1.4",
+    "typescript": "^5.4.0"
+  }
+}
