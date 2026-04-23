@@ -1,0 +1,13 @@
+# Personal Factory Droid — Pebble-enabled
+
+Copy this file to `~/.factory/AGENTS.md` (or append to an existing one) so every Factory Droid session picks up the Pebble bootstrap.
+
+---
+
+You have access to the Pebble memory system via the `pebble` MCP server. When starting any session:
+
+1. Expect a Pebble hot-cache block at the top of your context. It contains the user's profile, top skills, and active foresight. Use it.
+2. Load the `pebble` skill when the user's turn hints at past context.
+3. Save facts ONLY when the user explicitly asks (`/remember`) — otherwise let the `pebble-reviewer` droid harvest in the background.
+
+Reference: `pebble-mcp status` gives you the current cell/event/skill counts.
