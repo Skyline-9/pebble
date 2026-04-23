@@ -41,4 +41,45 @@ describe("review-turn CLI", () => {
     }).toString();
     expect(out).toMatch(/asserted:\s*0/i);
   });
+
+  test("parses Factory session format (nested message envelope with content array)", () => {
+    execSync(`${BIN} init`, { env: { ...process.env, PEBBLE_ROOT: tmp } });
+    const transcriptPath = join(tmp, "factory.jsonl");
+    const lines = [
+      JSON.stringify({ type: "session_start" }),
+      JSON.stringify({
+        type: "message",
+        message: {
+          role: "user",
+          content: [
+            { type: "text", text: "<system-reminder>boilerplate</system-reminder>" },
+            { type: "text", text: "I prefer TypeScript for backend work." },
+          ],
+        },
+      }),
+      JSON.stringify({
+        type: "message",
+        message: {
+          role: "assistant",
+          content: [
+            { type: "thinking", thinking: "..." },
+            { type: "tool_use", id: "t1", name: "Read", input: {} },
+          ],
+        },
+      }),
+      JSON.stringify({
+        type: "message",
+        message: {
+          role: "user",
+          content: [{ type: "text", text: "My primary language is Haskell actually." }],
+        },
+      }),
+    ];
+    writeFileSync(transcriptPath, lines.join("\n") + "\n");
+    const out = execSync(`${BIN} review-turn --transcript ${transcriptPath}`, {
+      env: { ...process.env, PEBBLE_ROOT: tmp },
+    }).toString();
+    expect(out).toMatch(/asserted:\s*[1-9]/i);
+    expect(out).toMatch(/seen:\s*[1-9]/i);
+  });
 });

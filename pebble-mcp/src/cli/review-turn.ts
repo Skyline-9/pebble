@@ -22,6 +22,23 @@ function parseArgs(argv: string[]): Args {
   return out;
 }
 
+function normalizeRole(role: unknown): "user" | "assistant" | "tool" | null {
+  if (role === "user" || role === "assistant" || role === "tool") return role;
+  return null;
+}
+
+function extractTextFromContent(content: unknown): string | null {
+  if (typeof content === "string") return content;
+  if (!Array.isArray(content)) return null;
+  const parts: string[] = [];
+  for (const part of content) {
+    if (!part || typeof part !== "object") continue;
+    const p = part as { type?: unknown; text?: unknown };
+    if (p.type === "text" && typeof p.text === "string") parts.push(p.text);
+  }
+  return parts.length ? parts.join("\n") : null;
+}
+
 function readTranscript(path: string): Transcript {
   if (!existsSync(path)) return [];
   const raw = readFileSync(path, "utf8");
@@ -30,8 +47,21 @@ function readTranscript(path: string): Transcript {
   for (const line of lines) {
     try {
       const t = JSON.parse(line);
-      if (t && typeof t.role === "string" && typeof t.content === "string") {
-        turns.push({ role: t.role, content: t.content });
+      if (!t || typeof t !== "object") continue;
+
+      // Flat format: {role, content: string}
+      if (typeof t.role === "string" && typeof t.content === "string") {
+        const role = normalizeRole(t.role);
+        if (role) turns.push({ role, content: t.content });
+        continue;
+      }
+
+      // Factory session format: {type: "message", message: {role, content: array-or-string}}
+      if (t.type === "message" && t.message && typeof t.message === "object") {
+        const role = normalizeRole((t.message as any).role);
+        const text = extractTextFromContent((t.message as any).content);
+        if (role && text) turns.push({ role, content: text });
+        continue;
       }
     } catch { /* skip malformed */ }
   }
