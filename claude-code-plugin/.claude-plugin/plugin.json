@@ -1,0 +1,15 @@
+{
+  "name": "pebble",
+  "version": "0.0.1",
+  "description": "Super-personal memory for Claude Code — profile, skills, and knowledge that survive compaction and sessions.",
+  "authors": [{ "name": "pebble" }],
+  "homepage": "https://github.com/pebble/pebble",
+  "license": "MIT",
+  "mcpServers": {
+    "pebble": {
+      "command": "pebble-mcp",
+      "args": ["serve"],
+      "env": { "PEBBLE_ROOT": "${HOME}/.pebble" }
+    }
+  }
+}
