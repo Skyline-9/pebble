@@ -8,7 +8,11 @@ export interface FtsHit {
 
 /** Returns raw FTS5 BM25 hits for a query string. Excludes retracted cells. */
 export function ftsSearch(db: Database, query: string, limit: number): FtsHit[] {
-  const safe = query.replace(/["']/g, " ").trim();
+  // FTS5 treats . - ( ) * ^ etc. as syntax. Strip to whitespace, then collapse.
+  const safe = query
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
   if (!safe) return [];
   const sql = `
     SELECT f.cell_id AS cell_id, bm25(cells_fts) AS raw
