@@ -3,6 +3,8 @@
 # On Stop, compute turn number + adds/retracts delta, then commit.
 set -euo pipefail
 
+export PATH="$HOME/.bun/bin:$PATH"
+
 ROOT="${PEBBLE_ROOT:-$HOME/.pebble}"
 TURN_FILE="$ROOT/.cc-turn"
 LAST_EVT_FILE="$ROOT/.cc-last-event-count"

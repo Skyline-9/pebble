@@ -3,6 +3,8 @@
 # Emits JSON with additionalContext for Factory Droid to inject into the system prompt.
 set -euo pipefail
 
+export PATH="$HOME/.bun/bin:$PATH"
+
 CACHE="$(pebble-mcp hot-cache-for-droid 2>/dev/null || echo "")"
 
 if [ -z "$CACHE" ]; then

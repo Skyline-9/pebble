@@ -3,6 +3,8 @@
 # Every tool use increments a round counter. At threshold, flag the reviewer.
 set -euo pipefail
 
+export PATH="$HOME/.bun/bin:$PATH"
+
 ROOT="${PEBBLE_ROOT:-$HOME/.pebble}"
 COUNTER_FILE="$ROOT/.cc-rounds"
 THRESHOLD="${PEBBLE_REVIEW_EVERY:-8}"

@@ -3,6 +3,9 @@
 # On Stop, compute turn + adds/retracts delta, call pebble-mcp commit-turn, reset round counter.
 set -euo pipefail
 
+# Ensure pebble-mcp resolves even when parent shell doesn't export $HOME/.bun/bin.
+export PATH="$HOME/.bun/bin:$PATH"
+
 ROOT="${PEBBLE_ROOT:-$HOME/.pebble}"
 TURN_FILE="$ROOT/.droid-turn"
 LAST_EVT_FILE="$ROOT/.droid-last-event-count"
