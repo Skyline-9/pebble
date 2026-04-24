@@ -40,4 +40,14 @@ describe("cli", () => {
     expect(out).toContain("## Skills");
     expect(out).toContain("typescript");
   });
+
+  test("hot-cache-for-gemini prints the same injection block", () => {
+    execSync(`${BIN} init`, { env: { ...process.env, PEBBLE_ROOT: tmp } });
+    execSync(`${BIN} seed-test-fixture`, { env: { ...process.env, PEBBLE_ROOT: tmp } });
+    const out = execSync(`${BIN} hot-cache-for-gemini`, { env: { ...process.env, PEBBLE_ROOT: tmp } }).toString();
+    expect(out).toContain("## Profile");
+    expect(out).toContain("## Skills");
+    expect(out).toContain("<!-- pebble hot-cache begin -->");
+    expect(out).toContain("<!-- pebble hot-cache end -->");
+  });
 });
