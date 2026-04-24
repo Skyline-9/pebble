@@ -36,11 +36,22 @@ export function registerMemoryTools(ctx: MemoryContext) {
     const actor = args.actor ?? "reviewer";
     const cell_id = newCellId();
     const now = new Date().toISOString();
+
+    // Normalize facts: drop malformed entries, default missing confidence to cell confidence.
+    // MCP clients occasionally omit per-fact confidence; we accept that but never persist null.
+    const rawFacts = Array.isArray(args.facts) ? args.facts : [];
+    const facts: AtomicFact[] = [];
+    for (const f of rawFacts) {
+      if (!f || typeof f.subject !== "string" || typeof f.predicate !== "string" || typeof f.object !== "string") continue;
+      const confidence = (typeof f.confidence === "number" && Number.isFinite(f.confidence)) ? f.confidence : args.confidence;
+      facts.push({ subject: f.subject, predicate: f.predicate, object: f.object, confidence });
+    }
+
     const cell: MemCell = {
       id: cell_id,
       type: args.type,
       E: args.episode,
-      F: args.facts,
+      F: facts,
       M: { created_at: now, actor },
       confidence: args.confidence,
       evidence: [],
