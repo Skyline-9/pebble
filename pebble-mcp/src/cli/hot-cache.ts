@@ -5,7 +5,7 @@ import { registerProfileTools } from "../mcp/tools/profile";
 import { registerSkillTools } from "../mcp/tools/skill";
 
 interface HotCacheArgs {
-  target: "cc" | "droid";
+  target: "cc" | "droid" | "gemini";
   max_skills?: number;
   max_foresight?: number;
 }
