@@ -26,8 +26,8 @@ for f in "$PLUGIN_DIR/commands/"*.toml; do
 done
 echo "    ok"
 
-echo "==> hooks/hooks.json has 4 events, uses \${extensionPath}"
-jq -e '.SessionStart and .AfterTool and .AfterAgent and .PreCompress' \
+echo "==> hooks/hooks.json has 4 events under outer 'hooks' wrapper, uses \${extensionPath}"
+jq -e '.hooks.SessionStart and .hooks.AfterTool and .hooks.AfterAgent and .hooks.PreCompress' \
   "$PLUGIN_DIR/hooks/hooks.json" > /dev/null
 grep -q '${extensionPath}' "$PLUGIN_DIR/hooks/hooks.json"
 echo "    ok"
