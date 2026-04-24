@@ -1,10 +1,19 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pebble-marketplace",
+  "metadata": {
+    "description": "Pebble — personal memory substrate for Claude Code."
+  },
+  "owner": {
+    "name": "pebble",
+    "email": "pebble@local"
+  },
   "plugins": [
     {
       "name": "pebble",
-      "source": "."
+      "description": "Super-personal memory for Claude Code: profile, skills, knowledge that persist across sessions and compactions.",
+      "version": "0.0.1",
+      "source": "./",
+      "category": "productivity"
     }
   ]
 }

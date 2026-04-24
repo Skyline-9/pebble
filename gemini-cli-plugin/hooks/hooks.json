@@ -1,48 +1,60 @@
 {
-  "SessionStart": [
-    {
-      "matcher": "startup|resume|clear",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "${extensionPath}/hooks/scripts/session-start.sh",
-          "timeout": 15000
-        }
-      ]
-    }
-  ],
-  "AfterTool": [
-    {
-      "matcher": "write_file|replace|run_shell_command|edit_file",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "${extensionPath}/hooks/scripts/after-tool.sh",
-          "timeout": 10000
-        }
-      ]
-    }
-  ],
-  "AfterAgent": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "${extensionPath}/hooks/scripts/after-agent.sh",
-          "timeout": 30000
-        }
-      ]
-    }
-  ],
-  "PreCompress": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "${extensionPath}/hooks/scripts/pre-compress.sh",
-          "timeout": 5000
-        }
-      ]
-    }
-  ]
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "pebble-session-start",
+            "description": "Inject pebble hot-cache (profile, skills, foresight) into session context",
+            "timeout": 15000,
+            "command": "${extensionPath}/hooks/scripts/session-start.sh"
+          }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "matcher": "write_file|replace|run_shell_command|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "pebble-after-tool",
+            "description": "Increment round counter; at threshold, hint to invoke pebble-reviewer",
+            "timeout": 10000,
+            "command": "${extensionPath}/hooks/scripts/after-tool.sh"
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "pebble-after-agent",
+            "description": "Commit pebble turn summary (adds/retracts delta) to ~/.pebble",
+            "timeout": 30000,
+            "command": "${extensionPath}/hooks/scripts/after-agent.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompress": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "pebble-pre-compress",
+            "description": "Re-render vault snapshot before compression",
+            "timeout": 5000,
+            "command": "${extensionPath}/hooks/scripts/pre-compress.sh"
+          }
+        ]
+      }
+    ]
+  }
 }
