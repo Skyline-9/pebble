@@ -33,7 +33,14 @@ export function projectEvent(db: Database, ev: MemEvent): boolean {
         );
         db.query("DELETE FROM facts WHERE cell_id=?").run(cell.id);
         const insertFact = db.query("INSERT INTO facts(cell_id, subject, predicate, object, confidence) VALUES(?, ?, ?, ?, ?)");
-        for (const f of cell.F) insertFact.run(cell.id, f.subject, f.predicate, f.object, f.confidence);
+        for (const f of cell.F) {
+          // Skip malformed facts (missing subject/predicate/object) — they're schema-violating
+          // payloads that shouldn't have been asserted, but we don't want to crash the projector.
+          if (!f || typeof f.subject !== "string" || typeof f.predicate !== "string" || typeof f.object !== "string") continue;
+          // Default fact confidence to the cell confidence when missing (MCP clients may omit it).
+          const fc = (typeof f.confidence === "number" && Number.isFinite(f.confidence)) ? f.confidence : cell.confidence;
+          insertFact.run(cell.id, f.subject, f.predicate, f.object, fc);
+        }
         db.query("DELETE FROM cells_fts WHERE cell_id=?").run(cell.id);
         db.query("INSERT INTO cells_fts(cell_id, content) VALUES(?, ?)").run(cell.id, buildFtsContent(cell));
         if (cell.P) {

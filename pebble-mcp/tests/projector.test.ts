@@ -104,4 +104,32 @@ describe("projector", () => {
     expect(rows).toHaveLength(1);
     expect(rows[0].cell_id).toBe("mc_a");
   });
+
+  test("facts with null/missing confidence default to cell confidence (backward-compat)", () => {
+    const cell = sampleCell("mc_a");
+    cell.F = [
+      { subject: "s1", predicate: "p1", object: "o1", confidence: 0.9 },
+      { subject: "s2", predicate: "p2", object: "o2" } as any,  // missing confidence
+      { subject: "s3", predicate: "p3", object: "o3", confidence: null as any },  // null confidence
+    ];
+    cell.confidence = 0.7;
+    projectEvent(db, assertE("ev_01", "mc_a", cell));
+    const facts = db.query("SELECT subject, confidence FROM facts WHERE cell_id='mc_a' ORDER BY subject").all() as any[];
+    expect(facts).toHaveLength(3);
+    expect(facts[0].confidence).toBe(0.9);
+    expect(facts[1].confidence).toBe(0.7);
+    expect(facts[2].confidence).toBe(0.7);
+  });
+
+  test("malformed facts (missing subject/predicate/object) are skipped, not fatal", () => {
+    const cell = sampleCell("mc_a");
+    cell.F = [
+      { subject: "ok", predicate: "p", object: "o", confidence: 0.8 },
+      { scope: "stray-metadata" } as any,
+      { subject: "also-ok", predicate: "p", object: "o", confidence: 0.8 },
+    ];
+    projectEvent(db, assertE("ev_01", "mc_a", cell));
+    const facts = db.query("SELECT subject FROM facts WHERE cell_id='mc_a' ORDER BY subject").all() as any[];
+    expect(facts.map(f => f.subject)).toEqual(["also-ok", "ok"]);
+  });
 });
