@@ -2,13 +2,14 @@
 
 Pebble is an append-only memory substrate for AI coding agents. Facts, preferences, skills, and episodic notes are written to a single JSONL log, projected into SQLite for fast queries, rendered to Obsidian-compatible markdown, and injected into every agent session as a "hot cache" so context survives across conversations, compactions, and tools.
 
-Three packages live here:
+Four packages live here:
 
 | Package | What it is |
 | --- | --- |
 | [`pebble-mcp/`](./pebble-mcp) | The core: MCP server + SQLite projection + markdown renderers + CLI |
 | [`claude-code-plugin/`](./claude-code-plugin) | Claude Code plugin: slash commands, hooks, skills, reviewer subagent |
 | [`factory-droid-plugin/`](./factory-droid-plugin) | Factory Droid plugin: commands, hooks, skills, reviewer droid |
+| [`gemini-cli-plugin/`](./gemini-cli-plugin) | Gemini CLI extension: TOML commands, hooks, skills, reviewer sub-agent |
 
 Current status: MVP tagged `pebble-mvp-v0.0.1`. Live memory for the author is at `~/.pebble/` (12 cells, 12 events, 28 facts as of this writing).
 
@@ -49,6 +50,10 @@ claude plugins install pebble@pebble-local
 # factory-droid-plugin/, enable the plugin in ~/.factory/settings.json, and add the MCP
 # server entry to ~/.factory/mcp.json:
 #   "pebble": { "command": "/ABS/PATH/TO/bun", "args": ["run", "/ABS/PATH/.../pebble-mcp/src/index.ts", "serve"] }
+
+# 4) Gemini CLI
+gemini extensions link /absolute/path/to/agent-memory/gemini-cli-plugin
+# or from the repo root: `gemini extensions install /absolute/path/to/agent-memory/gemini-cli-plugin`
 ```
 
 ## CLI reference (pebble-mcp)
@@ -60,6 +65,7 @@ pebble-mcp verify                 # replay log → projection, confirm consisten
 pebble-mcp status                 # counts: cells, events, skills
 pebble-mcp hot-cache-for-cc       # system-prompt block (Claude Code format)
 pebble-mcp hot-cache-for-droid    # system-prompt block (Droid format)
+pebble-mcp hot-cache-for-gemini   # system-prompt block (Gemini CLI format)
 pebble-mcp render-vault           # materialize full markdown vault
 pebble-mcp commit-turn <arg>      # CC/Droid plugin hook helper
 pebble-mcp review-turn <arg>      # extract facts from a transcript
@@ -115,12 +121,19 @@ agent-memory/
 │   ├── agents/                   # pebble-reviewer subagent
 │   ├── skills/                   # pebble, pebble-query, pebble-save
 │   └── hooks/                    # SessionStart, PostToolUse, PostCompact, Stop
-└── factory-droid-plugin/         # `pebble@pebble-local` for Factory Droid
-    ├── plugin.json               # manifest (MCP in ~/.factory/mcp.json — see docs/)
-    ├── commands/                 # /pebble, /remember, /forget, /recall, /profile
-    ├── droids/                   # pebble, pebble-reviewer
+├── factory-droid-plugin/         # `pebble@pebble-local` for Factory Droid
+│   ├── plugin.json               # manifest (MCP in ~/.factory/mcp.json — see docs/)
+│   ├── commands/                 # /pebble, /remember, /forget, /recall, /profile
+│   ├── droids/                   # pebble, pebble-reviewer
+│   ├── skills/                   # pebble, pebble-query, pebble-save
+│   └── hooks/                    # SessionStart, PostToolUse, Stop
+└── gemini-cli-plugin/            # `pebble` extension for Gemini CLI
+    ├── gemini-extension.json     # manifest + embedded MCP server
+    ├── GEMINI.md                 # context file (loaded into system prompt)
+    ├── commands/                 # *.toml — /pebble, /remember, /forget, /recall, /profile
+    ├── agents/                   # pebble-reviewer sub-agent
     ├── skills/                   # pebble, pebble-query, pebble-save
-    └── hooks/                    # SessionStart, PostToolUse, Stop
+    └── hooks/                    # SessionStart, AfterTool, AfterAgent, PreCompress
 ```
 
 ## Design principles

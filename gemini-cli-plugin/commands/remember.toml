@@ -1,0 +1,13 @@
+description = "Explicitly remember something. Uses the pebble-save skill."
+
+prompt = """
+The user wants to save something explicitly. Arguments: {{args}}
+
+1. Load the `pebble-save` skill from this extension.
+2. Parse the user's intent:
+   - If the text describes a fact or preference → call `memory_assert` (Path A in pebble-save).
+   - If the text describes a reusable procedure or pattern → call `skill_save` (Path B in pebble-save).
+3. Confirm to the user what was saved, including the resulting `cell_id`.
+
+If no arguments were provided, respond with: "What should I remember?" and stop.
+"""

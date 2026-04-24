@@ -1,0 +1,13 @@
+{
+  "name": "pebble",
+  "version": "0.0.1",
+  "description": "Super-personal memory for Gemini CLI — profile, skills, knowledge that persist across sessions and compactions.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "pebble": {
+      "command": "pebble-mcp",
+      "args": ["serve"],
+      "env": { "PEBBLE_ROOT": "${HOME}/.pebble" }
+    }
+  }
+}

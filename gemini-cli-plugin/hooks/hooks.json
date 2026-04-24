@@ -1,0 +1,48 @@
+{
+  "SessionStart": [
+    {
+      "matcher": "startup|resume|clear",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "${extensionPath}/hooks/scripts/session-start.sh",
+          "timeout": 15000
+        }
+      ]
+    }
+  ],
+  "AfterTool": [
+    {
+      "matcher": "write_file|replace|run_shell_command|edit_file",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "${extensionPath}/hooks/scripts/after-tool.sh",
+          "timeout": 10000
+        }
+      ]
+    }
+  ],
+  "AfterAgent": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "${extensionPath}/hooks/scripts/after-agent.sh",
+          "timeout": 30000
+        }
+      ]
+    }
+  ],
+  "PreCompress": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "${extensionPath}/hooks/scripts/pre-compress.sh",
+          "timeout": 5000
+        }
+      ]
+    }
+  ]
+}
