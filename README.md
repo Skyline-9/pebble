@@ -54,28 +54,23 @@ pebble index                    # Compiles AST chunks and builds the search inde
 
 ### 3) Plugin Integration
 
-> **Note:** Plugin integration requires a local clone of the repository. If you haven't already:
-> ```bash
-> git clone https://github.com/skyline-9/pebble.git
-> ```
-
-#### Claude Code (run inside the Claude Code prompt)
+#### Claude Code
+Run these inside the Claude Code prompt — no local clone needed:
 ```
-/plugin marketplace add /path/to/pebble/claude-code-plugin
+/plugin marketplace add skyline-9/pebble
 /plugin install pebble@pebble-marketplace
 ```
 
 #### Factory Droid
-Enable the plugin in `installed_plugins.json` and add the MCP server configuration to your `~/.factory/mcp.json`:
-```json
-"pebble": {
-  "command": "pebble",
-  "args": ["serve"]
-}
+```bash
+droid plugin marketplace add https://github.com/skyline-9/pebble
+droid plugin install pebble@pebble-marketplace --scope user
 ```
 
 #### Gemini CLI
+Requires a local clone:
 ```bash
+git clone https://github.com/skyline-9/pebble.git
 gemini extensions install /path/to/pebble/gemini-cli-plugin
 ```
 

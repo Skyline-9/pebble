@@ -12,7 +12,11 @@
       "name": "pebble",
       "description": "Super-personal memory for Claude Code: profile, skills, knowledge that persist across sessions and compactions.",
       "version": "0.0.1",
-      "source": "./",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/skyline-9/pebble.git",
+        "path": "claude-code-plugin"
+      },
       "category": "productivity"
     }
   ]
