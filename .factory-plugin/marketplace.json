@@ -1,7 +1,7 @@
 {
   "name": "pebble-marketplace",
   "description": "Pebble — the personal memory substrate for Factory Droid.",
-  "owner": { "name": "pebble", "email": "pebble@local" },
+  "owner": { "name": "pebble", "email": "luo.richard@gmail.com" },
   "plugins": [
     {
       "name": "pebble",
