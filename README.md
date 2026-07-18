@@ -19,6 +19,16 @@ Three plugins integrate Pebble with AI coding agents:
 *   [`factory-droid-plugin/`](./factory-droid-plugin) — Factory Droid plugin providing commands, hooks, and a reviewer droid.
 *   [`gemini-cli-plugin/`](./gemini-cli-plugin) — Antigravity (AGY) plugin defining skills, hooks, and a reviewer subagent.
 
+### 🔬 Research Basis
+
+Pebble's core concepts (specifically its living-knowledge claims, symbol anchoring, and update queues) are conceptually derived from research in agentic memory and context management:
+
+*   **[EverMemOS](https://arxiv.org/abs/2601.02163)** (`2601.02163`) — Schema design for structured memory consolidation (MemCells and MemScenes).
+*   **[A-MEM: Agentic Memory](https://arxiv.org/abs/2502.12110)** (`2502.12110`) — Zettelkasten-inspired note linking and evolution over time.
+*   **[ACE: Agentic Context Engineering](https://arxiv.org/abs/2510.04618)** (`2510.04618`) — Context playbooks with delta updates, which inspired Pebble's queued update packets.
+*   **[AutoSkill](https://arxiv.org/abs/2603.01145)** (`2603.01145`) — Automated skill extraction from user queries and logs.
+*   **[SwiftMem](https://arxiv.org/abs/2601.08160)** (`2601.08160`) — Fast agentic memory indexing and query-aware cache management.
+
 ---
 
 ## 🚀 Quickstart
