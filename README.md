@@ -68,7 +68,7 @@ pebble index                    # Compiles AST chunks and builds the search inde
 Run these inside the Claude Code prompt — no local clone needed:
 ```
 /plugin marketplace add skyline-9/pebble
-/plugin install pebble@pebble-marketplace
+/plugin install pebble@pebble
 ```
 
 #### Factory Droid
