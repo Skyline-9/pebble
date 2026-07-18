@@ -63,7 +63,7 @@ bun link              # installs `pebble-mcp` on PATH
 bun test              # 74 tests
 
 # 2) Claude Code
-claude plugins marketplace add /absolute/path/to/agent-memory/claude-code-plugin
+claude plugins marketplace add /absolute/path/to/pebble/claude-code-plugin
 claude plugins install pebble@pebble-local
 
 # 3) Factory Droid
@@ -73,8 +73,8 @@ claude plugins install pebble@pebble-local
 #   "pebble": { "command": "/ABS/PATH/TO/bun", "args": ["run", "/ABS/PATH/.../pebble-mcp/src/index.ts", "serve"] }
 
 # 4) Gemini CLI
-gemini extensions link /absolute/path/to/agent-memory/gemini-cli-plugin
-# or from the repo root: `gemini extensions install /absolute/path/to/agent-memory/gemini-cli-plugin`
+gemini extensions link /absolute/path/to/pebble/gemini-cli-plugin
+# or from the repo root: `gemini extensions install /absolute/path/to/pebble/gemini-cli-plugin`
 ```
 
 ## 🛠️ CLI reference (pebble-mcp)
@@ -121,7 +121,7 @@ Four paths, pick whichever fits your flow:
 ## 📂 Layout
 
 ```
-agent-memory/
+pebble/
 ├── README.md                     # this file
 ├── pebble-mcp/                   # core library + MCP server + CLI
 │   ├── src/
