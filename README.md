@@ -54,6 +54,15 @@ Most memory tools focus on **file synchronization**. Pebble focuses on **state m
 
 ## 🚀 Quickstart
 
+Pebble requires **[Bun](https://bun.sh)** (v1.0+) due to its dependency on `bun:sqlite` and native TypeScript execution.
+
+If you need to install Bun, run:
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+Once Bun is installed, proceed with the setup:
+
 ```bash
 # 1) core
 cd pebble-mcp
