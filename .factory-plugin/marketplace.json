@@ -6,9 +6,7 @@
     {
       "name": "pebble",
       "description": "Super-personal memory for Factory Droid.",
-      "version": "0.0.1",
-      "source": "./factory-droid-plugin",
-      "author": { "name": "pebble", "email": "pebble@local" }
+      "source": "./factory-droid-plugin"
     }
   ]
 }
