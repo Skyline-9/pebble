@@ -123,7 +123,6 @@ Four paths, pick whichever fits your flow:
 ```
 agent-memory/
 ├── README.md                     # this file
-├── docs/                         # planning + design notes
 ├── pebble-mcp/                   # core library + MCP server + CLI
 │   ├── src/
 │   │   ├── index.ts              # dispatcher
@@ -142,8 +141,8 @@ agent-memory/
 │   ├── agents/                   # pebble-reviewer subagent
 │   ├── skills/                   # pebble, pebble-query, pebble-save
 │   └── hooks/                    # SessionStart, PostToolUse, PostCompact, Stop
-├── factory-droid-plugin/         # `pebble@pebble-local` for Factory Droid
-│   ├── plugin.json               # manifest (MCP in ~/.factory/mcp.json — see docs/)
+├── factory-droid-plugin/         # pebble@pebble-local for Factory Droid
+│   ├── plugin.json               # manifest (MCP in ~/.factory/mcp.json)
 │   ├── commands/                 # /pebble, /remember, /forget, /recall, /profile
 │   ├── droids/                   # pebble, pebble-reviewer
 │   ├── skills/                   # pebble, pebble-query, pebble-save
