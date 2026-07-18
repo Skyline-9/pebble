@@ -62,9 +62,9 @@ bun run init          # creates ~/.pebble/{log.jsonl,projection.db,vault,trace.j
 bun link              # installs `pebble-mcp` on PATH
 bun test              # 78 tests
 
-# 2) Claude Code
-claude plugins marketplace add /absolute/path/to/pebble/claude-code-plugin
-claude plugins install pebble@pebble-local
+# 2) Claude Code (run these inside the Claude Code prompt)
+/plugin marketplace add /absolute/path/to/pebble/claude-code-plugin
+/plugin install pebble@pebble-marketplace
 
 # 3) Factory Droid
 # Edit ~/.factory/plugins/known_marketplaces.json + installed_plugins.json to point at
@@ -73,8 +73,7 @@ claude plugins install pebble@pebble-local
 #   "pebble": { "command": "/ABS/PATH/TO/bun", "args": ["run", "/ABS/PATH/.../pebble-mcp/src/index.ts", "serve"] }
 
 # 4) Gemini CLI
-gemini extensions link /absolute/path/to/pebble/gemini-cli-plugin
-# or from the repo root: `gemini extensions install /absolute/path/to/pebble/gemini-cli-plugin`
+gemini extensions install /absolute/path/to/pebble/gemini-cli-plugin
 ```
 
 ## 🛠️ CLI reference (pebble-mcp)
