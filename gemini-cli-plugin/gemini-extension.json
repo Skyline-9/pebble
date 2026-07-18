@@ -1,7 +1,7 @@
 {
   "name": "pebble",
   "version": "0.0.1",
-  "description": "Super-personal memory for Gemini CLI — profile, skills, knowledge that persist across sessions and compactions.",
+  "description": "Super-personal memory for Antigravity (AGY) — profile, skills, knowledge that persist across sessions and compactions.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "pebble": {

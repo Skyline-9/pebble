@@ -17,7 +17,7 @@ Pebble's core is written in **Rust** and consists of two main crates:
 Three plugins integrate Pebble with AI coding agents:
 *   [`claude-code-plugin/`](./claude-code-plugin) — Claude Code plugin adding slash commands, hooks, and a reviewer subagent.
 *   [`factory-droid-plugin/`](./factory-droid-plugin) — Factory Droid plugin providing commands, hooks, and a reviewer droid.
-*   [`gemini-cli-plugin/`](./gemini-cli-plugin) — Gemini CLI extension defining TOML commands, hooks, and a reviewer subagent.
+*   [`gemini-cli-plugin/`](./gemini-cli-plugin) — Antigravity (AGY) plugin defining skills, hooks, and a reviewer subagent.
 
 ---
 
@@ -67,11 +67,9 @@ droid plugin marketplace add https://github.com/skyline-9/pebble
 droid plugin install pebble@pebble-marketplace --scope user
 ```
 
-#### Gemini CLI
-Requires a local clone:
+#### Antigravity (AGY)
 ```bash
-git clone https://github.com/skyline-9/pebble.git
-gemini extensions install /path/to/pebble/gemini-cli-plugin
+agy plugin install https://github.com/skyline-9/pebble/gemini-cli-plugin
 ```
 
 

@@ -1,4 +1,4 @@
-# Pebble-enabled Gemini CLI project
+# Pebble-enabled Antigravity project
 
 This project uses the Pebble memory system. The `pebble-mcp` server provides persistent memory across sessions via MCP tools (`memory_*`, `profile_*`, `skill_*`).
 
