@@ -12,7 +12,7 @@
       "name": "pebble",
       "description": "Super-personal memory for Claude Code: profile, skills, knowledge that persist across sessions and compactions.",
       "version": "0.0.1",
-      "source": "./",
+      "source": "./claude-code-plugin",
       "category": "productivity"
     }
   ]
