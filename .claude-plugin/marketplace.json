@@ -4,7 +4,7 @@
     "description": "Pebble — personal memory substrate for Claude Code."
   },
   "owner": {
-    "name": "pebble",
+    "name": "Richard Luo",
     "email": "luo.richard@gmail.com"
   },
   "plugins": [
