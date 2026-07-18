@@ -63,7 +63,7 @@ Run these inside the Claude Code prompt — no local clone needed:
 
 #### Factory Droid
 ```bash
-droid plugin marketplace add https://github.com/skyline-9/pebble --path factory-droid-plugin
+droid plugin marketplace add https://github.com/skyline-9/pebble
 droid plugin install pebble@pebble-marketplace --scope user
 ```
 
