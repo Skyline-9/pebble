@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# gemini-cli-plugin/hooks/scripts/after-agent.sh
+# plugins/gemini-cli-plugin/hooks/scripts/after-agent.sh
 # Fires once per turn after the model responds. Equivalent to CC's Stop hook for Pebble's
 # purposes: run one final synchronous reindex so the next session starts from a current
 # generation. Pebble never stages or commits `.pebble/knowledge/`; any note edits remain an

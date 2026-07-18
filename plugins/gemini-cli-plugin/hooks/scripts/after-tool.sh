@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# gemini-cli-plugin/hooks/scripts/after-tool.sh
+# plugins/gemini-cli-plugin/hooks/scripts/after-tool.sh
 # After an edit-shaped tool call, kick off a background incremental reindex so Pebble's
 # evidence stays current for the next /search or /note call. Fire-and-forget: never blocks
 # the tool result on indexing latency.

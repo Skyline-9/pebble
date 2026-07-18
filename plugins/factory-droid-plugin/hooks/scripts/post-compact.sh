@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-# factory-droid-plugin/hooks/scripts/session-start.sh
-# Emits JSON with additionalContext for Factory Droid to inject into the system prompt.
-# Reports this repository's Pebble index health.
+# plugins/factory-droid-plugin/hooks/scripts/post-compact.sh
+# After compaction, re-report this repository's Pebble index health.
 set -euo pipefail
 
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -31,4 +30,4 @@ else
 fi
 
 jq -n --arg ctx "$CTX" \
-  '{hookSpecificOutput: {hookEventName: "SessionStart", additionalContext: $ctx}}'
+  '{hookSpecificOutput: {hookEventName: "PostCompact", additionalContext: $ctx}}'

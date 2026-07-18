@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# factory-droid-plugin/tests/smoke.sh
+# plugins/factory-droid-plugin/tests/smoke.sh
 # Smoke test: plugin config references the new `pebble` binary, command files are
 # well-formed, and hooks no-op cleanly outside a registered Pebble repository.
 set -euo pipefail

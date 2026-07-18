@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# factory-droid-plugin/hooks/scripts/stop.sh
+# plugins/factory-droid-plugin/hooks/scripts/stop.sh
 # On Stop, run one final synchronous reindex so the next session starts from a current
 # generation. Pebble never stages or commits `.pebble/knowledge/` on the user's behalf; any
 # note edits remain an ordinary working-tree diff for the user to review and commit.

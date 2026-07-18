@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# gemini-cli-plugin/hooks/scripts/session-start.sh
+# plugins/gemini-cli-plugin/hooks/scripts/session-start.sh
 # Emits JSON with additionalContext so Gemini CLI injects Pebble's index health into session
 # context. Gemini hook contract: stdin = session_id/transcript_path/cwd/hook_event_name/
 # timestamp/source, stdout = {hookSpecificOutput: {additionalContext: "<text>"}}.

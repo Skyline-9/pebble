@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# gemini-cli-plugin/tests/smoke.sh
+# plugins/gemini-cli-plugin/tests/smoke.sh
 # Smoke test: extension config references the new `pebble` binary, command files are
 # well-formed TOML, and hooks no-op cleanly outside a registered Pebble repository.
 set -euo pipefail
