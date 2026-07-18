@@ -26,10 +26,18 @@ Three plugins integrate Pebble with AI coding agents:
 Pebble requires **Rust** (v1.96.1+ or toolchain configured via `rust-toolchain.toml`).
 
 ### 1) Core setup
-Compile and install the `pebble` binary onto your `PATH`:
+You can install the `pebble` binary directly from GitHub:
 ```bash
+cargo install --git https://github.com/skyline-9/pebble pebble-cli
+```
+
+Or, if you are developing or setting up plugins, clone the repository and install it locally:
+```bash
+git clone https://github.com/skyline-9/pebble.git
+cd pebble
 cargo install --path crates/pebble-cli
 ```
+
 Verify the installation:
 ```bash
 pebble --help
@@ -46,9 +54,14 @@ pebble index                    # Compiles AST chunks and builds the search inde
 
 ### 3) Plugin Integration
 
+> **Note:** Plugin integration requires a local clone of the repository. If you haven't already:
+> ```bash
+> git clone https://github.com/skyline-9/pebble.git
+> ```
+
 #### Claude Code (run inside the Claude Code prompt)
 ```
-/plugin marketplace add /absolute/path/to/pebble/claude-code-plugin
+/plugin marketplace add /path/to/pebble/claude-code-plugin
 /plugin install pebble@pebble-marketplace
 ```
 
@@ -63,8 +76,9 @@ Enable the plugin in `installed_plugins.json` and add the MCP server configurati
 
 #### Gemini CLI
 ```bash
-gemini extensions install /absolute/path/to/pebble/gemini-cli-plugin
+gemini extensions install /path/to/pebble/gemini-cli-plugin
 ```
+
 
 ---
 

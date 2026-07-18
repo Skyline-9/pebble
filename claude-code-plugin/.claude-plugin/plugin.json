@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Super-personal memory for Claude Code — profile, skills, and knowledge that survive compaction and sessions.",
   "authors": [{ "name": "pebble" }],
-  "homepage": "https://github.com/pebble/pebble",
+  "homepage": "https://github.com/skyline-9/pebble",
   "license": "MIT",
   "mcpServers": {
     "pebble": {

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Super-personal memory for Factory Droid — profile, skills, knowledge that persist across sessions and compactions.",
   "author": { "name": "pebble", "email": "pebble@local" },
-  "homepage": "https://github.com/pebble/pebble",
+  "homepage": "https://github.com/skyline-9/pebble",
   "license": "MIT",
   "keywords": ["memory", "skills", "profile", "pebble"],
   "mcpServers": {
