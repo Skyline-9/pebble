@@ -63,8 +63,8 @@ Run these inside the Claude Code prompt — no local clone needed:
 
 #### Factory Droid
 ```bash
-droid plugin marketplace add https://github.com/skyline-9/pebble
-droid plugin install pebble@pebble-marketplace --scope user
+droid plugin marketplace add https://github.com/skyline-9/pebble.git
+droid plugin install pebble@pebble
 ```
 
 #### Antigravity (AGY)
