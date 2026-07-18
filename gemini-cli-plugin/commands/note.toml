@@ -1,0 +1,18 @@
+description = "Record a knowledge-note claim in this repository's `.pebble/knowledge/` directory."
+
+prompt = """
+The user wants to record a durable claim about this repository's code. Arguments: {{args}}
+
+Procedure:
+
+1. Call `search { query: <arg>, repository: ".", budget_tokens: 4000 }` to gather citable evidence (files, symbols, line ranges) for the claim.
+2. Choose or create a note file under `.pebble/knowledge/<topic>.md`. If it already exists, read it first.
+3. Write or update a managed claim region using the Pebble note format:
+   - a stable claim key under the `pebble_claims` frontmatter, with `status: current` and `review: agent_generated`
+   - explicit anchors (repository, path, symbol) drawn from the evidence gathered in step 1
+   - a `<!-- pebble:managed claim=<id> --> ... <!-- /pebble:managed -->` block whose prose cites `repo@revision:path#symbol:Lstart-Lend`
+4. Leave every byte outside the managed region untouched — Pebble owns only its frontmatter keys and the managed markers, never the surrounding human-authored prose.
+5. Tell the user the note file path and claim id. This is an ordinary working-tree diff; Pebble does not stage or commit it, so the user reviews and commits it themselves.
+
+If no arguments were provided, respond with: "What should I record as a note?" and stop.
+"""

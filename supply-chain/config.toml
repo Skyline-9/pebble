@@ -1,0 +1,14 @@
+
+# cargo-vet config file
+
+[cargo-vet]
+version = "0.10"
+
+[policy.pebble-cli]
+audit-as-crates-io = false
+
+[policy.pebble-core]
+audit-as-crates-io = false
+
+[policy.xtask]
+audit-as-crates-io = false

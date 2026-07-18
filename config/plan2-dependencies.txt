@@ -1,0 +1,37 @@
+# Plan 2 model-free retrieval capability contract.
+# capability scope:candidate@exact-version[|scope:alternative@exact-version]
+# A Plan 2 candidate may become adopt only after its exact checked-in macOS
+# arm64 result validates with ci_run_id "local". Ubuntu, nonlocal CI run IDs,
+# and merged aggregates are not required for Plan 2 approval. The rejected gix
+# candidate is satisfied only by the adopted, restricted system-Git subprocess
+# boundary. Optional embeddings and ANN remain deferred outside Plan 2.
+serialization research:serde@1.0.228
+json research:serde_json@1.0.150
+errors research:thiserror@2.0.18
+cli research:clap@4.6.1
+runtime research:tokio@1.52.3
+mcp research:rmcp@1.8.0
+graph research:rusqlite@0.40.1
+lexical research:tantivy@0.26.1
+parser research:tree-sitter@0.26.8
+grammar-c research:tree-sitter-c@0.24.2
+grammar-c-sharp research:tree-sitter-c-sharp@0.23.5
+grammar-cpp research:tree-sitter-cpp@0.23.4
+grammar-go research:tree-sitter-go@0.25.0
+grammar-java research:tree-sitter-java@0.23.5
+grammar-javascript research:tree-sitter-javascript@0.25.0
+grammar-kotlin research:tree-sitter-kotlin-ng@1.1.0
+grammar-python research:tree-sitter-python@0.25.0
+grammar-ruby research:tree-sitter-ruby@0.23.1
+grammar-rust research:tree-sitter-rust@0.24.2
+grammar-swift research:tree-sitter-swift@0.7.3
+grammar-typescript research:tree-sitter-typescript@0.23.2
+symbols research:scip@0.6.1
+toml research:toml@1.1.2
+markdown research:pulldown-cmark@0.13.4
+yaml research:yaml-rust2@0.11.0
+git research:gix@0.83.0|boundary:system-git@n/a
+traversal research:ignore@0.4.28
+hash research:blake3@1.8.5
+ids research:ulid@1.2.1
+watch research:notify@8.2.0

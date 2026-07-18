@@ -1,56 +1,48 @@
 #!/usr/bin/env bash
 # factory-droid-plugin/tests/smoke.sh
-# Smoke test: init, seed, run hooks, verify vault + git + commit actor.
+# Smoke test: plugin config references the new `pebble` binary, command files are
+# well-formed, and hooks no-op cleanly outside a registered Pebble repository.
 set -euo pipefail
 
-ROOT="$(mktemp -d)"
-export PEBBLE_ROOT="$ROOT"
-export PEBBLE_REVIEW_EVERY=2
 PLUGIN_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-echo "==> pebble-mcp init"
-pebble-mcp init
-
-echo "==> pebble-mcp seed-test-fixture"
-pebble-mcp seed-test-fixture
-
-echo "==> SessionStart hook"
-out="$("$PLUGIN_DIR/hooks/scripts/session-start.sh")"
-echo "$out" | jq -e '.hookSpecificOutput.hookEventName == "SessionStart"' > /dev/null
+echo "==> plugin.json references the pebble binary"
+jq -e '.mcpServers.pebble.command == "pebble" and .mcpServers.pebble.args == ["serve"]' \
+  "$PLUGIN_DIR/.factory-plugin/plugin.json" > /dev/null
+if grep -q "pebble-mcp" "$PLUGIN_DIR/.factory-plugin/plugin.json"; then
+  echo "    FAIL: plugin.json still references pebble-mcp"; exit 1
+fi
 echo "    ok"
 
-echo "==> PostCompact hook"
-out="$("$PLUGIN_DIR/hooks/scripts/post-compact.sh")"
-echo "$out" | jq -e '.hookSpecificOutput.hookEventName == "PostCompact"' > /dev/null
+echo "==> commands/*.md have valid frontmatter and no legacy tool names"
+for f in "$PLUGIN_DIR/commands/"*.md; do
+  head -n1 "$f" | grep -qx -- "---"
+  grep -qE '^description: ' "$f"
+  awk '/^---$/{c++} END{exit c==2?0:1}' "$f"
+  if grep -qE 'memory_(assert|query|read_cell|retract|touch)|skill_save|profile_read' "$f"; then
+    echo "    FAIL: $f still references legacy memory tools"; exit 1
+  fi
+done
+echo "    ok ($(ls "$PLUGIN_DIR/commands/"*.md | wc -l | tr -d ' ') command files)"
+
+echo "==> hooks/scripts no longer reference pebble-mcp"
+if grep -rl "pebble-mcp" "$PLUGIN_DIR/hooks/scripts/" > /dev/null; then
+  echo "    FAIL: a hook script still references pebble-mcp"; exit 1
+fi
 echo "    ok"
 
-echo "==> PostToolUse hook (rounds 1-2; only round 2 emits)"
-out1="$("$PLUGIN_DIR/hooks/scripts/post-tool-use.sh" < /dev/null)"
-out2="$("$PLUGIN_DIR/hooks/scripts/post-tool-use.sh" < /dev/null)"
-test -z "$out1"
-echo "$out2" | jq -e '.hookSpecificOutput.additionalContext | test("pebble-reviewer"; "i")' > /dev/null
+echo "==> hooks no-op cleanly outside a registered Pebble repository"
+WORKDIR="$(mktemp -d)"
+(
+  cd "$WORKDIR"
+  out="$("$PLUGIN_DIR/hooks/scripts/session-start.sh")"
+  test -z "$out"
+  out="$("$PLUGIN_DIR/hooks/scripts/post-compact.sh")"
+  test -z "$out"
+  "$PLUGIN_DIR/hooks/scripts/post-tool-use.sh"
+  "$PLUGIN_DIR/hooks/scripts/stop.sh"
+)
+rm -rf "$WORKDIR"
 echo "    ok"
 
-echo "==> Stop hook (commit-turn as factory-droid)"
-"$PLUGIN_DIR/hooks/scripts/stop.sh"
-latest="$(cd "$ROOT" && git log -1 --format=%B)"
-echo "$latest" | grep -qE ":memo: pebble: turn 1 \+[0-9]+ -[0-9]+"
-echo "$latest" | grep -q "actor: factory-droid"
-echo "    ok"
-
-echo "==> pebble-mcp verify"
-pebble-mcp verify
-
-echo "==> review-turn CLI end-to-end"
-transcript="$(mktemp)"
-cat > "$transcript" <<'JSONL'
-{"role":"user","content":"I prefer TypeScript for backend services."}
-{"role":"assistant","content":"Noted."}
-{"role":"user","content":"My primary language is Python actually."}
-JSONL
-pebble-mcp review-turn --transcript "$transcript" | grep -qE "asserted: [1-9]"
-rm -f "$transcript"
-echo "    ok"
-
-echo "==> all hooks + plugin wiring OK"
-rm -rf "$ROOT"
+echo "==> all plugin config + command wiring OK"

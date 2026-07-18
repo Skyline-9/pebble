@@ -9,9 +9,9 @@
   "mcpServers": {
     "pebble": {
       "type": "stdio",
-      "command": "pebble-mcp",
+      "command": "pebble",
       "args": ["serve"],
-      "env": { "PEBBLE_ROOT": "${HOME}/.pebble" },
+      "env": { "HOME": "${HOME}" },
       "disabled": false
     }
   }

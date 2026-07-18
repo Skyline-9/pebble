@@ -1,0 +1,4 @@
+cargo-audit 0.22.1
+cargo-deny 0.19.8
+cargo-geiger 0.13.0
+cargo-vet 0.10.2

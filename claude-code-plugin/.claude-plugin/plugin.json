@@ -7,9 +7,9 @@
   "license": "MIT",
   "mcpServers": {
     "pebble": {
-      "command": "pebble-mcp",
+      "command": "pebble",
       "args": ["serve"],
-      "env": { "PEBBLE_ROOT": "${HOME}/.pebble" }
+      "env": { "HOME": "${HOME}" }
     }
   }
 }

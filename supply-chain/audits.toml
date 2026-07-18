@@ -1,0 +1,1478 @@
+
+# cargo-vet audits file
+
+[[audits.aho-corasick]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.4"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 17f8b32e3b7c845ef3c5429b823804f552f14ec9; source https://github.com/BurntSushi/aho-corasick; no network feature is enabled."
+
+[[audits.allocator-api2]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.21"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 63cd7fcc2f8854b5821c7054d026e8a4647acde1; source https://github.com/zakarumych/allocator-api2; no network feature is enabled."
+
+[[audits.android_system_properties]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.5"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is fb87625f1 from nical/android_system_properties. No build script, proc macro, filesystem, process, or network access. Reviewed the Android FFI callbacks, fixed property-info lifetime, UTF-8 conversion, and API-level gating; this target-only crate is not linked on Pebble's macOS or Linux targets."
+
+[[audits.anstyle]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.14"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 0fe6f0ff6 from rust-cli/anstyle. No build script, proc macro, native code, or ambient I/O. Reviewed fixed-size ANSI formatting buffers and repr-u8 color conversion; every index and initialized byte count is bounded by the enum and decimal formatting helpers."
+
+[[audits.arc-swap]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.9.2"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 147d6c0319d389a0aaa134a67abaa00106122f7d; source https://github.com/vorner/arc-swap; no network feature is enabled."
+
+[[audits.arraydeque]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.5.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.arrayref]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.9"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.arrayvec]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.7.8"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.async-trait]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.89"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is a7e91e98a from dtolnay/async-trait. The macro parses and rewrites input tokens only, with no build script, filesystem, process, environment, network, or native surface. Unsafe text is confined to syntax recognition and emitted user code handling, not macro-runtime memory operations."
+
+[[audits.autocfg]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.5.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 2799b09c2 from cuviper/autocfg. This build helper reads Cargo and rustc environment, invokes the configured rustc with fixed capability probes, and writes only under OUT_DIR. It has no unsafe code, network access, native linking, or proc-macro entry point."
+
+[[audits.base64]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.22.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS e14400697453bcc85997119b874bc03d9601d0af; source https://github.com/marshallpierce/rust-base64; no network feature is enabled."
+
+[[audits.bitflags]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.13.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.bitpacking]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.3"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS d391b7e74ce626da4389987dd2972f33723776da; source https://github.com/quickwit-oss/bitpacking; no network feature is enabled."
+
+[[audits.blake3]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.8.5"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.bon]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "3.9.3"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 0d443827ea1682fb8163f41c84f84ec4fea7c7f0; source https://github.com/elastio/bon; no network feature is enabled."
+
+[[audits.bon-macros]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "3.9.3"
+notes = "Full proc-macro audit; archive checksum matches Cargo.lock; VCS 0d443827ea1682fb8163f41c84f84ec4fea7c7f0; source https://github.com/elastio/bon; no network feature is enabled."
+
+[[audits.bstr]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.13.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.bumpalo]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "3.20.3"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 84654ace6 from fitzgen/bumpalo. No build script, proc macro, process, network, or native link. Reviewed chunk allocation layout, alignment and overflow checks, initialized-region tracking, collection growth, pointer arithmetic, drop iteration, and allocator lifetimes; target usage comes through wasm support only."
+
+[[audits.byteorder]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.5.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS ec068eefa042d494475db125c4b034bd8e9e34dd; source https://github.com/BurntSushi/byteorder; no network feature is enabled."
+
+[[audits.bytes]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.12.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 76c0fbb54 from tokio-rs/bytes. No build script, proc macro, native link, process, or network access. Reviewed vtable-backed ownership and atomic reference counts, owner pinning, split and advance bounds, Vec capacity and initialization invariants, MaybeUninit writes, and BufMut contracts used by RMCP framing."
+
+[[audits.cc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.2.67"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is fa031a077 from rust-lang/cc-rs. This build-only crate discovers configured compilers and SDK tools, reads build environment, and launches compiler, archiver, and platform discovery commands; it has no network access. Reviewed argument construction, shell escaping, jobserver tokens, Windows COM and registry boundaries, inherited environment handling, and output paths. It is resolved only for target-specific time-zone support."
+
+[[audits.census]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.2"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS ca2f3735c6305536b15444ced6ee5da5d86ffea9; source https://github.com/quickwit-inc/census; no network feature is enabled."
+
+[[audits.cfg-if]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.4"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 3510ca6ab from rust-lang/cfg-if. The crate is one declarative conditional-compilation macro with no unsafe code, build script, proc macro, native code, or ambient capability."
+
+[[audits.chrono]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.45"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 170338250 from chronotope/chrono. No build script, proc macro, process, or network capability. Reviewed checked date arithmetic and range conversions plus target-specific local-time FFI and TZ file parsing; RMCP enables serde and now, while local-time platform implementations remain target-gated."
+
+[[audits.clap]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "4.6.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is ac5fda6a7 from clap-rs/clap. This facade has no build script, proc macro, native link, or runtime network/filesystem access. The spike disables defaults and derive, enabling only std, help, and usage; all parsing behavior is delegated to the separately audited builder and lexer."
+
+[[audits.clap_builder]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "4.6.0"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 9ab6dee71 from clap-rs/clap. No build script, proc macro, native link, or network access. Reviewed argument grammar, value bounds, subcommand dispatch, help rendering, OsString handling, and feature gates; unsafe tokens are documentation examples, and enabled features do not read environment variables or color configuration."
+
+[[audits.clap_lex]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.0"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 9ab6dee71 from clap-rs/clap. No build script, proc macro, native code, or ambient I/O. Reviewed OsStr encoded-byte slicing: every unchecked reconstruction starts from as_encoded_bytes and splits only at boundaries found from UTF-8 string needles."
+
+[[audits.constant_time_eq]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.2"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.core-foundation-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.8.7"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 652bab0a6 from servo/core-foundation-rs. This is a macOS target-only raw FFI declaration crate with no build script, proc macro, filesystem, process, or network logic. Reviewed ABI types, extern declarations, ownership annotations, and framework link attributes; callers own all safety obligations."
+
+[[audits.cpufeatures]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.crc32fast]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.5.0"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS dbf4f76cd71cdcc57d9164cbd46890d53ce0423c; source https://github.com/srijs/rust-crc32fast; no network feature is enabled."
+
+[[audits.crossbeam-channel]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.5.16"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 9b56303b8aa9ff8ec5bbebb9d2da05e034977889; source https://github.com/crossbeam-rs/crossbeam; no network feature is enabled."
+
+[[audits.crossbeam-deque]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.8.7"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS 9b56303b8aa9ff8ec5bbebb9d2da05e034977889; source https://github.com/crossbeam-rs/crossbeam; no network feature is enabled."
+
+[[audits.crossbeam-epoch]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.20"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS 239bae00257967a109911b9ebe7c0554d6333501; source https://github.com/crossbeam-rs/crossbeam; no network feature is enabled."
+
+[[audits.crossbeam-utils]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.8.22"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS 9b56303b8aa9ff8ec5bbebb9d2da05e034977889; source https://github.com/crossbeam-rs/crossbeam; no network feature is enabled."
+
+[[audits.crunchy]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.4"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS ba7b86cea6ba89ccfc72ccb24cc4a4ac6d9c6272; source https://github.com/eira-fransham/crunchy; no network feature is enabled."
+
+[[audits.darling]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS cfef4e58225fb72edeb712b70ab984bd59d3baf2; source https://github.com/TedDriggs/darling; no network feature is enabled."
+
+[[audits.darling_core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS cfef4e58225fb72edeb712b70ab984bd59d3baf2; source https://github.com/TedDriggs/darling; no network feature is enabled."
+
+[[audits.darling_macro]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.0"
+notes = "Full proc-macro audit; archive checksum matches Cargo.lock; VCS cfef4e58225fb72edeb712b70ab984bd59d3baf2; source https://github.com/TedDriggs/darling; no network feature is enabled."
+
+[[audits.datasketches]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is fdb38b85d from apache/datasketches-rust. No unsafe code, build script, proc macro, native link, filesystem, process, or network access. Reviewed HLL sketch serialization, bounded register indexing, checked size calculations, and merge paths."
+
+[[audits.deranged]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.5.8"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 7d0c671e8c806b96d582af197df3c620e09cb33b; source https://github.com/jhpratt/deranged; no network feature is enabled."
+
+[[audits.downcast-rs]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.0.2"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS d30dcb42084251a20017eb45215957bf18fb7db5; source https://github.com/marcianx/downcast-rs; no network feature is enabled."
+
+[[audits.dyn-clone]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.20"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 1d2d15c5d from dtolnay/dyn-clone. No build script, proc macro, native link, or ambient I/O. Reviewed trait-object clone vtable dispatch, fat-pointer reconstruction, and Box ownership transfer; the cloned pointer originates from the same implementor and is consumed exactly once."
+
+[[audits.either]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.16.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 8f4ecd9964ea909a7f989a3668a2710310a0e62f; source https://github.com/rayon-rs/either; no network feature is enabled."
+
+[[audits.equivalent]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.2"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 44cdd44f8b8ebb5f9ae096c7550a5e74ffb7d6ae; source https://github.com/indexmap-rs/equivalent; no network feature is enabled."
+
+[[audits.erased-serde]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.10"
+notes = "Full source and build-script audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 4bea873f4 from dtolnay/erased-serde. The build script emits feature cfg only and has no network or native link. Reviewed the type-erased visitor storage: inline values fit the aligned union, heap values are reclaimed exactly once, TypeId guards recoveries, and callers consume temporary erased values before the source lifetime ends."
+
+[[audits.errno]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.14"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS ffc03bfb9eb491013567115e6eea560948cd9e52; source https://github.com/lambda-fairy/rust-errno; no network feature is enabled."
+
+[[audits.fallible-iterator]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 11cfa0558045e52bdb473c9eab6a1eb35a54e302; source https://github.com/sfackler/rust-fallible-iterator; no network feature is enabled."
+
+[[audits.fallible-streaming-iterator]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.9"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS archive-only; source https://github.com/sfackler/fallible-streaming-iterator; no network feature is enabled."
+
+[[audits.fastdivide]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.2"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 1ed33f15429320d1bc928786083e088531200717; source https://github.com/fulmicoton/fastdivide; no network feature is enabled."
+
+[[audits.fastrand]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.4.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 728a5b503ff233098d9808d572295c4c4f652cd7; source https://github.com/smol-rs/fastrand; no network feature is enabled."
+
+[[audits.find-msvc-tools]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.9"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 0767349e1 from rust-lang/cc-rs. This target-only build helper reads Windows registry and environment and invokes no network services. Reviewed COM initialization and release, BSTR and SAFEARRAY lifetimes, registry buffer sizing, tool-path discovery, and command-line quoting; it is not active on Pebble's two native targets."
+
+[[audits.fnv]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.7"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 4b4784ebfd3332dc61f0640764d6f1140e03a9ab; source https://github.com/servo/rust-fnv; no network feature is enabled."
+
+[[audits.foldhash]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 8f878c636 from orlp/foldhash. No build script, proc macro, native link, filesystem, process, or network access. Reviewed process seed initialization, raw unaligned loads, and long-input loops; each unchecked load is preceded by a length guard and accesses only the input slice."
+
+[[audits.fs4]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.13.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 9d15e8559e1525567478ad084a95f567e5bda369; source https://github.com/al8n/fs4-rs; no network feature is enabled."
+
+[[audits.fsevent-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "4.1.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.futures]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. This facade contains no unsafe code, build script, proc macro, native code, or ambient I/O; it re-exports the separately audited futures components selected by RMCP."
+
+[[audits.futures-channel]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. No build script, proc macro, native link, or ambient I/O. Reviewed MPSC queue ownership, atomic state transitions, waker registration, lock handoff, and oneshot initialization and drop paths; pointer access remains synchronized by documented atomic states."
+
+[[audits.futures-core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. No build script, proc macro, native code, or ambient I/O. Reviewed AtomicWaker synchronization and pinned stream delegation; unsafe calls preserve pinning and use acquire/release state transitions before waker access."
+
+[[audits.futures-executor]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. No build script, proc macro, native link, filesystem, or network access. Reviewed thread-pool ownership, local pool borrowing, unpark mutex states, and Arc-based wakeups; access to UnsafeCell futures is serialized by executor state."
+
+[[audits.futures-io]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. The crate defines safe asynchronous I/O traits only, with no unsafe code, build script, proc macro, implementation I/O, or native surface."
+
+[[audits.futures-macro]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. The macro parses and emits tokens only, with no build script or ambient capability. Reviewed generated pin projections for join, select, and stream loops; unsafe emitted projections target macro-owned pinned fields without moving them."
+
+[[audits.futures-sink]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. The crate defines the Sink trait and forwarding implementations only, with no build script, proc macro, native code, or ambient I/O. Unsafe projections delegate through Pin without moving the inner sink."
+
+[[audits.futures-task]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. No build script, proc macro, native link, or ambient I/O. Reviewed RawWaker vtables, Arc reference-count reconstruction, FutureObj lifetime erasure, pin projections, and drop callbacks; each raw pointer is derived from a live owner and consumed or restored exactly once."
+
+[[audits.futures-util]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.32"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d9bba94c2 from rust-lang/futures-rs. No build script, native link, filesystem, process, or network access. Reviewed pin-projection macros, FuturesUnordered intrusive queues and RawWaker ownership, lock and channel synchronization, MaybeUninit buffers, and combinator aliasing invariants."
+
+[[audits.getrandom]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.4"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.getrandom]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.3"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS 5e7cd5733536844a9856dc7259bd4696bbe5e3ae; source https://github.com/rust-random/getrandom; no network feature is enabled."
+
+[[audits.globset]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.19"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.hashbrown]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.16.1"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 1876e4f02 from rust-lang/hashbrown. No build script, proc macro, native link, filesystem, process, or network access. Reviewed raw-table allocation and growth, bucket ownership, iterator lifetimes, entry replacement and removal, and disjoint mutable APIs; unchecked pointer access remains bounded by table capacity and duplicate-key preconditions."
+
+[[audits.hashbrown]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.17.1"
+notes = "Full source and build-script audit. Archive SHA-256 ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a matches research Cargo.lock; VCS c62a63a61b7caf2de8f9ecb7b06a66b0ab6bdf3d. No network or native link. Reviewed raw-table allocation, growth, bucket ownership, control bytes, iterator lifetimes, entry replacement/removal, and equivalent-key checks; all unchecked pointer operations remain constrained by table capacity and documented duplicate-key preconditions."
+
+[[audits.hashlink]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.11.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.htmlescape]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS archive-only; source https://github.com/veddan/rust-htmlescape; no network feature is enabled."
+
+[[audits.iana-time-zone]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.65"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 372696818 from strawlab/iana-time-zone. No build script, proc macro, process, or network access. Reviewed macOS CoreFoundation, Android, Windows, Haiku, and Unix timezone lookup boundaries, ownership release paths, NUL handling, UTF-8 conversion, and bounded configuration-file reads."
+
+[[audits.iana-time-zone-haiku]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.2"
+notes = "Full source, C++ shim, header, and build-script audit. Archive checksum matches the lockfile; VCS provenance is 668ef37a8 from strawlab/iana-time-zone path haiku. The target-only script compiles the fixed bundled implementation and links Haiku be; there is no network or external source input. Reviewed CString ownership, output allocation and free, exception containment, and null checks."
+
+[[audits.ident_case]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS bf0d863e3006b40a0d923a81d7b2dd2db1136c2c; source https://github.com/TedDriggs/ident_case; no network feature is enabled."
+
+[[audits.ignore]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.28"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.indexmap]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.14.0"
+notes = "Full source and build-script audit. Archive SHA-256 d466e9454f08e4a911e14806c24e16fba1b4c121d1ea474396f396069cf949d9 matches research Cargo.lock; VCS bcd165baeb12bdf6e57a31d9869e9839e25679c6. No network or native link. Reviewed ordered-index maintenance, index bounds, mutable entry APIs, retain/drain paths, and delegation to separately audited hashbrown raw tables."
+
+[[audits.inotify]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.11.4"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.inotify-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.8"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.inventory]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.24"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is d11c2796c from dtolnay/inventory. No build script, proc macro, filesystem, process, or network access. Reviewed target-gated linker-section constructors, static node lifetimes, atomic registry publication, and typed iteration; all nodes are static and the linked list only advances through published nodes."
+
+[[audits.itertools]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.14.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS a015a6831525ee1637df747d3f530a627d9741bf; source https://github.com/rust-itertools/itertools; no network feature is enabled."
+
+[[audits.itoa]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.18"
+notes = "Full source audit. Crates.io archive SHA-256 matches research Cargo.lock; VCS provenance is af77385 from dtolnay/itoa. No build script, proc macro, native link, filesystem, process, or network surface. Reviewed all integer-formatting unsafe blocks: sealed buffer cast is size-compatible, initialized ASCII suffix bounds are maintained, decimal-table indices are below 200, and output lengths fit per-type maxima. Delta from cached 1.0.17 replaces equivalent buffer cast and unrolls the final four digits without widening indices."
+
+[[audits.js-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.103"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 21ac804a9 from wasm-bindgen/wasm-bindgen. No build script, proc macro, filesystem, process, or network behavior. Reviewed wasm ABI imports, JS value handles, typed-array and BigInt conversion bounds, and task wakeup ownership; this target-only crate is not linked on Pebble's native targets."
+
+[[audits.kqueue]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.2.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.kqueue-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.2"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.levenshtein_automata]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 7060ab853caa636a0866e7a6efd2267d9d6d4a9a; source https://github.com/tantivy-search/levenshtein-automata; no network feature is enabled."
+
+[[audits.libc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.186"
+notes = "Full generated-source and build-script audit. Archive checksum matches the lockfile; VCS provenance is 42620ffc4 from rust-lang/libc. The build script reads Cargo target configuration and invokes only configured rustc or target-version tools for gated platforms; it has no network access. Reviewed platform ABI declarations, repr layouts, constants, cfg selection, symbol links, and opaque types. Most unsafe tokens are FFI declarations rather than executable blocks."
+
+[[audits.libsqlite3-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.38.1"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS 6d3c282dc5531a57eb4e22ece3207f00c95d0fb0; source https://github.com/rusqlite/rusqlite; no network feature is enabled."
+
+[[audits.linux-raw-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.12.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 0e2918cf3e366d9c923d4ca05f169b49d826db56; source https://github.com/sunfishcode/linux-raw-sys; no network feature is enabled."
+
+[[audits.log]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.33"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is f405739f3 from rust-lang/log. No build script, proc macro, native code, filesystem, process, or network logic. Reviewed global logger registration atomics, metadata lifetimes, key-value visitors, and static logger pointer access; initialization publishes the pointer before the acquire-visible state."
+
+[[audits.lru]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.16.4"
+notes = "Full source audit after RUSTSEC-2026-0002. Archive SHA-256 matches research Cargo.lock; VCS provenance is d8c7f5ca5 from jeromefroe/lru-rs. No build script, proc macro, native link, filesystem, process, or network access. Reviewed node allocation, sentinels, key-reference hashing, insertion, eviction, and drop. IterMut tracks a remaining length, advances the raw pointer before yielding, and the added stacked-borrows regression test verifies sequential distinct mutable entries, replacing the unsound 0.12.5 resolution."
+
+[[audits.measure_time]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS a8981215f46635c0ffcb8f461e6a15bc6d2f0277; source https://github.com/PSeitz/rust_measure_time; no network feature is enabled."
+
+[[audits.memchr]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.8.3"
+notes = "Full source audit. Archive SHA-256 matches the lockfile; VCS provenance is 5fdb40c from BurntSushi/memchr. No build script, proc macro, native link, filesystem, process, or network surface. Reviewed generic, x86_64 SSE2/AVX2, aarch64 NEON, wasm, fallback, iterator, and memmem unsafe code: safe slice APIs derive same-allocation bounds; short/vector loops guard load widths; CPU dispatch gates target features; returned pointers remain in range; immutable lifetime-bound iterators justify Send/Sync. Delta from cached 2.8.2 adds an output bound assertion and correctly marks raw x86 dispatch APIs unsafe."
+
+[[audits.memmap2]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.11"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 7d76ad3157383db5670fd7e012f44de42aa7444b; source https://github.com/RazrFalcon/memmap2-rs; no network feature is enabled."
+
+[[audits.minimal-lexical]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS e997c46656ebe83e696b866bd954da1fa3f64eef; source https://github.com/Alexhuszagh/minimal-lexical; no network feature is enabled."
+
+[[audits.mio]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.2.2"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.murmurhash32]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 93b82f2ff10570d8d631b3a771680339f944bff8; source https://github.com/quickwit-inc/murmurhash32; no network feature is enabled."
+
+[[audits.nom]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "7.1.3"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 869f8972a4383b13cf89574fda28cb7dbfd56517; source https://github.com/Geal/nom; no network feature is enabled."
+
+[[audits.notify]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "8.2.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.notify-types]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.1.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.num-conv]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.2"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS b022fe87ac3ad5b0d7606ea7465549eaa92efe97; source https://github.com/jhpratt/num-conv; no network feature is enabled."
+
+[[audits.num-traits]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.19"
+notes = "Full source and build-script audit. Archive checksum matches the lockfile; VCS provenance is 7ec3d41d3 from rust-num/num-traits. The script runs a fixed rustc expression probe through audited autocfg and writes cfg only. Reviewed primitive cast range checks and the one unchecked float-to-int helper, whose callers enforce documented representable ranges."
+
+[[audits.once_cell]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.21.4"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 80fe900b2 from matklad/once_cell. No build script, proc macro, native link, process, or network access. Reviewed one-time initialization atomics, waiter stack lifetimes, panic rollback, Acquire and Release publication, race cells, Lazy pinning, and platform critical-section variants."
+
+[[audits.oneshot]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.13"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS a6a03981ec4d9aa3abb4445f0b90919d08a746ad; source https://github.com/faern/oneshot; no network feature is enabled."
+
+[[audits.ordered-float]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "5.3.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 6cca9b877 from reem/rust-ordered-float. No build script, proc macro, native link, filesystem, process, or network access. Reviewed transparent float casts, NotNan constructors and conversions, and optional archived representations; unchecked construction is limited to values proven non-NaN or transparent valid layouts."
+
+[[audits.ownedbytes]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS c6e77d27c605cb3cea1a933fa7d68632aeb7865e; source https://github.com/quickwit-oss/tantivy; no network feature is enabled."
+
+[[audits.pastey]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.3"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is c377d07c9 from as1100k/pastey. No build script, native code, process, filesystem, or network access. Token pasting and case conversion are deterministic; the explicit env segment can read only the variable named by macro input and is not used by Pebble's spike."
+
+[[audits.pin-project-lite]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.17"
+notes = "Full declarative-macro source audit. Archive checksum matches the lockfile; VCS provenance is 3bdf76344 from taiki-e/pin-project-lite. No build script, proc macro, native code, or ambient I/O. Reviewed generated projection methods, structural pinning, pinned drop restrictions, and UnsafeUnpin bounds; projections borrow fields in place and do not move pinned values."
+
+[[audits.pkg-config]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.33"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS f4ac872e02f9e2c111c55f3ed0eee6284d41d50f; source https://github.com/rust-lang/pkg-config-rs; no network feature is enabled."
+
+[[audits.powerfmt]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 5889a2a65c99836fd718340726f6b4379bc5028f; source https://github.com/jhpratt/powerfmt; no network feature is enabled."
+
+[[audits.ppv-lite86]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.21"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.prettyplease]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.37"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS c971184fa8c5ef5a2828196e35bd99469455b46b; source https://github.com/dtolnay/prettyplease; no network feature is enabled."
+
+[[audits.proc-macro2]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.106"
+notes = "Full source and build-script audit. Archive SHA-256 matches the lockfile; VCS provenance is 58ab776 from dtolnay/proc-macro2. Build script only queries configured rustc and compiles fixed local feature probes under OUT_DIR; no network, external data, or native linking. Crate is proc-macro support, not a proc-macro entry point. Unsafe is limited to ManuallyDrop field extraction and an internal literal constructor whose callers provide compiler-validated literals. Delta from cached 1.0.95 adds local stable span probes and literal parsing support without new ambient I/O."
+
+[[audits.protobuf]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "3.7.2"
+notes = "Full source and build-script audit. Archive SHA-256 d65a1d4ddae7d8b5de68153b48f6aa3bba8cb002b243dbdbc55a5afbc98f99f4 matches research Cargo.lock; VCS 4cb84f305c05f0376ff51b555a2740c5251c1280. The script writes the fixed package-version constants under OUT_DIR and emits only a feature cfg. Reviewed coded-input length, recursion, and EOF paths; message reflection, unknown-field storage, and unsafe enum/string conversions preserve slice and UTF-8 bounds. No network or native link."
+
+[[audits.protobuf-support]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "3.7.2"
+notes = "Full source audit. Archive SHA-256 3e36c2f31e0a47f9280fb347ef5e461ffcd2c52dd520d8e216b52f93b0b0d7d6 matches research Cargo.lock; VCS 4cb84f305c05f0376ff51b555a2740c5251c1280. This support crate has no unsafe code, build script, proc-macro entry point, native link, or ambient I/O; reviewed error and message-support forwarding only."
+
+[[audits.pulldown-cmark]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.13.4"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.quote]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.46"
+notes = "Full source and build-script audit. Archive SHA-256 matches the lockfile; VCS provenance is bc4caf2 from dtolnay/quote. Build script only queries configured rustc. Macro library has no unsafe, proc-macro entry point, native link, filesystem, process beyond rustc version, or network behavior. Delta from cached 1.0.45 expands quote_spanned macro structure while preserving token-only behavior."
+
+[[audits.r-efi]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "5.3.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.r-efi]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "6.0.0"
+notes = "Full target-only audit; archive checksum matches Cargo.lock; VCS 7e1b0322d31d625f81a5656096330934f9cd835d; source https://github.com/r-efi/r-efi; no network feature is enabled."
+
+[[audits.rand]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.5"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.rand_chacha]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.rand_core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.9.5"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.rayon]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.12.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS c9ced185ae3508246a9eb70c8407a1199bb1b77f; source https://github.com/rayon-rs/rayon; no network feature is enabled."
+
+[[audits.rayon-core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.13.0"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS 7af20d7692d5decbcb4adcaa079cd607e3e50814; source https://github.com/rayon-rs/rayon; no network feature is enabled."
+
+[[audits.ref-cast]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.25"
+notes = "Full source and build-script audit. Archive checksum matches the lockfile; VCS provenance is 8cea9d561 from dtolnay/ref-cast. The script writes one fixed private-module shim to OUT_DIR and queries configured rustc only. Reviewed repr-transparent reference and slice casts, alignment and metadata preservation, and custom cast contracts; no network or native link exists."
+
+[[audits.ref-cast-impl]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.25"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is 8cea9d561 from dtolnay/ref-cast. No build script or ambient capability. Reviewed repr-transparent validation and emitted pointer casts; the derive rejects invalid field counts and reprs before generating calls into the audited ref-cast boundary."
+
+[[audits.regex]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.13.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.regex-automata]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.16"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.regex-syntax]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.8.11"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 140167995737fa11dfe11b8af8b9aa143b790b4e; source https://github.com/rust-lang/regex; no network feature is enabled."
+
+[[audits.rmcp]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.8.0"
+notes = "Full source and build-script audit. Archive checksum matches the lockfile; VCS provenance is 25220361d from modelcontextprotocol/rust-sdk. RMCP source contains no unsafe code. Reviewed JSON-RPC dispatch, initialize negotiation, request cancellation-token propagation, stdio line framing, tool validation, shutdown paths, and feature gates. The build script may set Git hooks only in the upstream workspace when both .githooks and .git exist; registry builds cannot satisfy that path. Enabled features are only server and transport-io, with no HTTP, client, auth, OAuth, or network transport."
+
+[[audits.rusqlite]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.40.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 6d3c282dc5531a57eb4e22ece3207f00c95d0fb0; source https://github.com/rusqlite/rusqlite; no network feature is enabled."
+
+[[audits.rustc-hash]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.1.3"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS c13e7ccca705e6255387a2ebc6dca142d6881621; source https://github.com/rust-lang/rustc-hash; no network feature is enabled."
+
+[[audits.rustix]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.4"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS c4caf5caaa7e93828a2e4a4cdba1dd0171e45717; source https://github.com/bytecodealliance/rustix; no network feature is enabled."
+
+[[audits.rustversion]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.23"
+notes = "Full proc-macro and build-script audit. Archive checksum matches the lockfile; VCS provenance is 3a7c76605 from dtolnay/rustversion. The script invokes configured rustc and writes a parsed version expression under OUT_DIR. Macro entry points parse that generated version and input tokens only; no network, native link, or unrelated filesystem access exists."
+
+[[audits.same-file]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.6"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.schemars]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.2.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 5ef5da1e9 from GREsau/schemars. The library forbids unsafe code and has no build script, native code, process, or network access. Reviewed schema generation bounds, recursive references, map key handling, serde compatibility, and chrono adapters."
+
+[[audits.schemars_derive]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.2.1"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is 5ef5da1e9 from GREsau/schemars. The macro has no unsafe code, build script, native code, or ambient capability. Reviewed attribute parsing, rename and flatten behavior, generic bounds, and emitted schema recursion."
+
+[[audits.scip]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.6.1"
+notes = "Full generated-source audit. Archive SHA-256 2f0cc97469a1eef9e457bd6e935c8727d2e18c59489f06cd98207a6439a6498c matches research Cargo.lock; VCS 9d5796159c97c3b107355c424f6c06fb1a0ea01c. No build script, unsafe code, native link, or network capability. Reviewed the generated SCIP message declarations and protobuf dispatch; ingestion owns encoded-size, recursion, collection, UTF-8, and occurrence-range bounds before accepting records."
+
+[[audits.serde]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.228"
+notes = "Full source and build-script audit. Archive SHA-256 matches the lockfile; VCS provenance is a866b33 from serde-rs/serde. Build script writes only a fixed versioned private-module shim to OUT_DIR and queries rustc. No proc-macro entry point, native link, network, or ambient filesystem read. Reviewed unsafe UTF-8 conversions: all bytes originate from checked formatting or ASCII octets. Delta from cached 1.0.219 splits core contracts and private content handling without expanding unsafe behavior."
+
+[[audits.serde_core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.228"
+notes = "Full source and build-script audit. Archive SHA-256 matches the lockfile; VCS provenance is a866b33 from serde-rs/serde. Source is byte-for-byte identical to serde 1.0.228 src/core, reviewed separately; build script writes a fixed private-module shim under OUT_DIR, queries rustc, and selects target cfgs only. No proc macro, native link, network, or external input. Unsafe UTF-8 conversion is constrained to ASCII formatting. No prior cached standalone version exists; compared against the identical audited serde core tree."
+
+[[audits.serde_derive]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.228"
+notes = "Full proc-macro source audit. Archive SHA-256 matches the lockfile; VCS provenance is a866b33 from serde-rs/serde. The Serialize and Deserialize derive entry points only parse input tokens and emit deterministic tokens; no unsafe, build script, native link, filesystem, process, environment, or network access. Delta from cached 1.0.219 primarily splits enum and struct generation into modules and introduces the versioned serde private identifier, with no ambient capabilities."
+
+[[audits.serde_derive_internals]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.29.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 87f635e54 from serde-rs/serde. This proc-macro support library has no unsafe code, build script, proc-macro entry point, native code, or ambient capability. Reviewed serde attribute parsing, case conversion, AST validation, and field and variant checks used by schemars."
+
+[[audits.serde_json]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.150"
+notes = "Full source and build-script audit. Archive SHA-256 matches the lockfile; VCS provenance is a1ae73a from serde-rs/json. Build script reads target cfg environment and emits cfg only. No proc macro, native link, process, filesystem, or network capability. Reviewed all unsafe: same-slice offsets, validated UTF-8, reserved Vec writes with bounded length update, repr-transparent RawValue casts, formatter UTF-8 guarantees, and unreachable escape-table arm. Delta from cached 1.0.149 tightens enum map-key parsing and contains no unsafe changes."
+
+[[audits.serde_spanned]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.shlex]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.0.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is e82b1411b from comex/rust-shlex. No build script, proc macro, native code, or ambient I/O. Reviewed shell tokenization and byte-index handling; unchecked UTF-8 conversion is fed only by slices of the original validated UTF-8 input."
+
+[[audits.sketches-ddsketch]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 305157e27 from mheffner/rust-sketches-ddsketch. No unsafe code, build script, proc macro, native link, filesystem, process, or network access. Reviewed logarithmic key mapping, bounded store growth, quantile interpolation, and merge arithmetic."
+
+[[audits.slab]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.12"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is a1e434607 from tokio-rs/slab. No build script, proc macro, native link, or ambient I/O. Reviewed vacant-list indices, length and capacity accounting, MaybeUninit entry construction, disjoint mutable access duplicate checks, iterator bounds, and drop paths."
+
+[[audits.smallvec]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.15.2"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS c469051a1ba05ef1a03dd69e14b4a5aa329e6f10; source https://github.com/servo/rust-smallvec; no network feature is enabled."
+
+[[audits.stable_deref_trait]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.2.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 30002b4228f7cdee309217b6bf6eee099dda0b00; source https://github.com/storyyeller/stable_deref_trait; no network feature is enabled."
+
+[[audits.streaming-iterator]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.9"
+notes = "Full source audit. Archive SHA-256 2b2231b7c3057d5e4ad0156fb3dc807d900806020c5ffa3ee6ff2c8c76fb8520 matches research Cargo.lock; VCS 69069dc9e46facef6caa79ee48e47420de92633d. No unsafe code, build script, proc macro, native link, filesystem, process, or network access; reviewed trait defaults and adaptor forwarding."
+
+[[audits.strsim]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.11.1"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 76c5a900e6e12cfc605eee5ab6e36300384c8682; source https://github.com/rapidfuzz/strsim-rs; no network feature is enabled."
+
+[[audits.syn]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.0.119"
+notes = "Full parser source audit. Archive SHA-256 matches the lockfile; VCS provenance is 3295f9e from dtolnay/syn. No build script, proc-macro entry point, native link, or runtime filesystem/process/network capability. Reviewed unsafe token-buffer pointers and offsets against immutable boxed storage and sentinels, cursor lifetime transmutes against owning ParseBuffer and StepCursor proof, thread-bound Send/Sync access checks, and repr-compatible punctuation casts. Delta from cached 2.0.118 changes cursor-based verbatim parsing and does not change unsafe implementation lines."
+
+[[audits.tantivy]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.26.1"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is d8f4c0b70 from quickwit-oss/tantivy. No build script, proc macro, or network behavior is enabled. Reviewed mmap opening, document decoding, term validation, LZ4 reserved-buffer initialization, collector bounds, and pinned future projection. Pebble enables only mmap, and its contracts exercise immutable readers, exact filters, corrupt-index rejection, and staging-crash isolation."
+
+[[audits.tantivy-bitpacker]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.10.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 9e63fc508 from quickwit-oss/tantivy. No build script, proc macro, native link, filesystem, process, or network access. Reviewed scalar and AVX2 bit filtering; runtime dispatch gates AVX2, vector loads are unaligned by design, and loop bounds derive from input and output lengths."
+
+[[audits.tantivy-columnar]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.7.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 9e63fc508 from quickwit-oss/tantivy. No build script, proc macro, native link, filesystem, process, or network access. Reviewed dictionary decoding and optional indexes; mutable string bytes are filled only by validated dictionary output, and indexed lookups retain checked bounds."
+
+[[audits.tantivy-common]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.11.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 9e63fc508 from quickwit-oss/tantivy. No build script, proc macro, native link, filesystem, process, or network access. Reviewed JSON path encoding; byte replacements preserve UTF-8 because the substituted separators are valid one-byte ASCII controls."
+
+[[audits.tantivy-fst]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.5.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 29e16b3ec1b62fa21bcf4ba65d28088e67a5663f; source https://github.com/quickwit-inc/fst; no network feature is enabled."
+
+[[audits.tantivy-query-grammar]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.26.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 9e63fc508 from quickwit-oss/tantivy. No unsafe code, build script, proc macro, native link, filesystem, process, or network access. Reviewed tokenizer and parser state transitions, escaped literals, range parsing, and error reporting."
+
+[[audits.tantivy-sstable]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.7.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 9e63fc508 from quickwit-oss/tantivy. No unsafe code, build script, proc macro, native link, filesystem, process, or network access. Reviewed sorted-block decoding, value range checks, footer validation, and streaming iterator state."
+
+[[audits.tantivy-stacker]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.7.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 9e63fc508 from quickwit-oss/tantivy. No build script, proc macro, native link, filesystem, process, or network access. Reviewed arena page allocation, address arithmetic, unaligned store and load, shared hash-map key lengths, and fast comparisons; all unchecked ranges follow arena capacity and encoded-length validation."
+
+[[audits.tantivy-tokenizer-api]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.7.0"
+notes = "Full source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 9e63fc508 from quickwit-oss/tantivy. No unsafe code, build script, proc macro, native link, filesystem, process, or network access. Reviewed token offset construction, stream chaining, and text position accounting."
+
+[[audits.tempfile]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "3.27.0"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 5c8fa12eb584931b4f1bccfde87eb72fbfa7dc61; source https://github.com/Stebalien/tempfile; no network feature is enabled."
+
+[[audits.thiserror]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.69"
+notes = "Full source and build-script audit. Archive SHA-256 b6aaf5339b578ea85b50e080feb250a3e8ae8cfcdff9a461c9ec2904bc923f52 matches research Cargo.lock; VCS 41938bd3a03a70d34ed8e53d99c89c770c7c9c41. Runtime source has no unsafe code. The script runs a fixed rustc feature probe under OUT_DIR and emits cfg only, with no network or native link."
+
+[[audits.thiserror]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.0.18"
+notes = "Full source and build-script audit. Archive checksum matches the lockfile; VCS provenance is dc0f6a23a from dtolnay/thiserror. Runtime source has no unsafe code. The script writes a fixed private shim under OUT_DIR and runs fixed configured-rustc capability probes; no network or native link. Reviewed Error, source, backtrace, and provide forwarding."
+
+[[audits.thiserror-impl]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.69"
+notes = "Full proc-macro and build-script audit. Archive SHA-256 4fee6c4efc90059e10f81e6d42c60a18f76588c3d74cb83a0b242a2b6c7504c1 matches research Cargo.lock; VCS 41938bd3a03a70d34ed8e53d99c89c770c7c9c41. Reviewed attribute parsing, generated Display/Error forwarding, source conflict checks, and fixed compiler probes; no network, native link, or unrelated filesystem access."
+
+[[audits.thiserror-impl]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.0.18"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is dc0f6a23a from dtolnay/thiserror. No build script, native code, or ambient capability. Reviewed error attribute parsing, format expression scanning, source and From conflict checks, generic bounds, and emitted Display and Error implementations; the only unsafe token is syntax parsing."
+
+[[audits.time]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.53"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 0ae2f84d02f0da9eb723b2224c48e337c53ce4f2; source https://github.com/time-rs/time; no network feature is enabled."
+
+[[audits.time-core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.9"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS 5d8737c39b9170c36c99cfc1f9f49cf0c059c63a; source https://github.com/time-rs/time; no network feature is enabled."
+
+[[audits.time-macros]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.31"
+notes = "Full proc-macro audit; archive checksum matches Cargo.lock; VCS 7cf4780914b157df6c891ad8284dbb2fea608c7f; source https://github.com/time-rs/time; no network feature is enabled."
+
+[[audits.tokio]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.52.3"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d87569164 from tokio-rs/tokio. No build script or runtime network use is enabled by the selected features. Reviewed task allocation and RawWaker reference counts, intrusive pinned lists, scheduler ownership, oneshot and Notify atomics, timer-wheel pinning, blocking stdio workers, ReadBuf initialization, synchronization guards, shutdown, and panic cleanup. Foundation enables macros, rt-multi-thread, sync, and time; MCP adds io-std and io-util through RMCP, not net, process, signal, fs, or io-uring."
+
+[[audits.tokio-macros]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.7.0"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is 01a7f1dfa from tokio-rs/tokio. The macro has no unsafe code, build script, native code, or ambient capability. Reviewed main and test attribute parsing, runtime-flavor validation, entry-point rewriting, and select and join token generation."
+
+[[audits.tokio-util]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.7.18"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 9cc02cc88 from tokio-rs/tokio. No build script, proc macro, native code, process, filesystem, or network access. Reviewed codec buffer bounds, cancellation-token tree synchronization, reusable self-referential boxes, MaybeDangling drop order, poll sender pinning, and task-tracker state. RMCP uses codec and rt, and the spike directly uses the rt cancellation token to couple stdio EOF to service shutdown."
+
+[[audits.toml]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.2+spec-1.1.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.toml_datetime]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.1+spec-1.1.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.toml_parser]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.2+spec-1.1.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.tracing]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.44"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 2d55f6faf from tokio-rs/tracing. No build script, native code, filesystem, process, or network behavior. Reviewed instrumented future pin projections, span guard lifetimes, dispatcher propagation, and macro-generated callsites; unsafe projection never moves the wrapped future."
+
+[[audits.tracing-attributes]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.31"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is 55086231e from tokio-rs/tracing. The macro has no unsafe code, build script, native code, or ambient capability. Reviewed instrument attribute parsing, argument capture, async rewriting, return and error recording, and emitted span guards."
+
+[[audits.tracing-core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.36"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 10a9e838a from tokio-rs/tracing. No build script, proc macro, native code, or ambient I/O. Reviewed global dispatcher and callsite atomics, interest cache publication, spin once and mutex guards, subscriber downcasting, metadata statics, and thread-local dispatch lifetime handling."
+
+[[audits.tree-sitter]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.26.8"
+notes = "Full Rust binding, bundled C runtime, header, and build-script audit. Archive SHA-256 887bd495d0582c5e3e0d8ece2233666169fa56a9644d172fc22ad179ab2d0538 matches research Cargo.lock; VCS cd5b087cd9f45ca6d93ab1954f6b7c8534f324d2. Build uses audited cc for fixed bundled sources, without network access. Reviewed parser ownership, language ABI checks, cancellation progress callbacks, tree cursor bounds, and C allocator/parser lifetime bridges; the spike uses one parser, caps source bytes, and resets after cancellation."
+
+[[audits.tree-sitter-c]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.24.2"
+notes = "Full grammar Rust binding, generated C parser, metadata, and build-script audit. Archive SHA-256 a9b2eb57a55fed6b00812912e730b7a275cf4fe98bfd6a5d76263d4438371728 matches research Cargo.lock; VCS b780e47fc780ddc8da13afa35a3f4ed5c157823d. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-c-sharp]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.5"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 c1aac67f1ad71de1d6d39708d34811081c26dfa495658de6c14c34200849357c matches research Cargo.lock; VCS cac6d5fb595f5811a076336682d5d595ac1c9e85. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-cpp]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.4"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 df2196ea9d47b4ab4a31b9297eaa5a5d19a0b121dceb9f118f6790ad0ab94743 matches research Cargo.lock; VCS f41e1a044c8a84ea9fa8577fdd2eab92ec96de02. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-go]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.25.0"
+notes = "Full grammar Rust binding, generated C parser, metadata, and build-script audit. Archive SHA-256 c8560a4d2f835cc0d4d2c2e03cbd0dde2f6114b43bc491164238d333e28b16ea matches research Cargo.lock; VCS 1547678a9da59885853f5f5cc8a99cc203fa2e2c. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-java]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.5"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 0aa6cbcdc8c679b214e616fd3300da67da0e492e066df01bcf5a5921a71e90d6 matches research Cargo.lock; VCS 94703d5a6bed02b98e438d7cad1136c01a60ba2c. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-javascript]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.25.0"
+notes = "Full grammar Rust binding, generated C parser, scanner, JSX metadata, and build-script audit. Archive SHA-256 68204f2abc0627a90bdf06e605f5c470aa26fdcb2081ea553a04bdad756693f5 matches research Cargo.lock; VCS 44c892e0be055ac465d5eeddae6d3e194424e7de. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI, JSX, and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-kotlin-ng]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.0"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 e800ebbda938acfbf224f4d2c34947a31994b1295ee6e819b65226c7b51b4450 matches research Cargo.lock; VCS 77dd60ea0a9003ce062c9728a513ffe1aaff8c82. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-language]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.7"
+notes = "Full Rust binding, bundled C headers, and build-script audit. Archive SHA-256 009994f150cc0cd50ff54917d5bc8bffe8cad10ca10d81c34da2ec421ae61782 matches research Cargo.lock; VCS 470813116b99578956e67abb7138e993833af67a. Reviewed language-function FFI wrapper and fixed cc compilation path; no network access or runtime ambient capability."
+
+[[audits.tree-sitter-python]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.25.0"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 6bf85fd39652e740bf60f46f4cda9492c3a9ad75880575bf14960f775cb74a1c matches research Cargo.lock; VCS 293fdc02038ee2bf0e2e206711b69c90ac0d413f. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-ruby]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.1"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 be0484ea4ef6bb9c575b4fdabde7e31340a8d2dbc7d52b321ac83da703249f95 matches research Cargo.lock; VCS 71bd32fb7607035768799732addba884a37a6210. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-rust]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.24.2"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 439e577dbe07423ec2582ac62c7531120dbfccfa6e5f92406f93dd271a120e45 matches research Cargo.lock; VCS e2bee853694a1d3e0f6ef308fe3674542fec95d7. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-swift]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.7.3"
+notes = "Full grammar Rust binding, generated C parser, scanner, metadata, and build-script audit. Archive SHA-256 fe36052155b9dd69ca82b3b8f1b4ccfb2d867125ac1a4db1dd7331829242668c matches research Cargo.lock; VCS b8b22bffbb3441780e6471665bacfb263741c86a. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI and malformed-input recovery pass the direct spike."
+
+[[audits.tree-sitter-typescript]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.23.2"
+notes = "Full grammar Rust binding, TypeScript and TSX generated C parsers/scanners, metadata, and build-script audit. Archive SHA-256 6c5f76ed8d947a75cc446d5fccd8b602ebf0cde64ccf2ffa434d873d7a575eff matches research Cargo.lock; VCS f975a621f4e7f532fe322e13c4f79495e0a7b2e7. Build compiles fixed bundled C sources via audited cc, with no network access; grammar ABI, TSX, and malformed-input recovery pass the direct spike."
+
+[[audits.typeid]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.3"
+notes = "Full source and build-script audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is b06a3c08a from dtolnay/typeid. The build script emits rustc-version cfg only and has no network or native link. Reviewed the non-static type-ID lifetime transmutation, which is applied only to a PhantomData trait object and cannot expose a borrowed value."
+
+[[audits.typetag]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.22"
+notes = "Full source and build-script audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 1d2d3e97f from dtolnay/typetag. The build script emits feature cfg only and has no network or native link. Runtime code has no unsafe operations; reviewed inventory registration, erased-serde integration, tag lookup, and trait-object deserialization."
+
+[[audits.typetag-impl]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.22"
+notes = "Full proc-macro source audit. Archive SHA-256 matches research Cargo.lock; VCS provenance is 1d2d3e97f from dtolnay/typetag. No build script, native link, filesystem, process, or network access. Reviewed attribute parsing, generated inventory submissions, type-tag collision checks, and deterministic token emission; unsafe text is parsed syntax only."
+
+[[audits.ulid]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.2.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.unicase]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.9.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.unicode-ident]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.24"
+notes = "Full source and generated-table audit. Archive SHA-256 matches the lockfile; VCS provenance is 5b54a63 from dtolnay/unicode-ident. No build script, proc macro, native link, filesystem, process, or network surface. Both unsafe leaf lookups derive offsets from bounded trie byte indices whose generated chunk values fit the leaf table. Delta from cached 1.0.22 updates Unicode data tables and supported Unicode version without changing lookup control flow."
+
+[[audits.utf8-ranges]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.5"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS be9b8dfcaf449453cbf83ac85260ee80323f4f77; source https://github.com/BurntSushi/utf8-ranges; no network feature is enabled."
+
+[[audits.uuid]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.24.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.vcpkg]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.15"
+notes = "Full source audit; archive checksum matches Cargo.lock; VCS e7d37e095ef2aa85c80242aa3850d442832b7b54; source https://github.com/mcgoo/vcpkg-rs; no network feature is enabled."
+
+[[audits.walkdir]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "2.5.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.wasi]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.11.1+wasi-snapshot-preview1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.wasip2]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.4+wasi-0.2.12"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.wasm-bindgen]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.126"
+notes = "Full source and build-script audit. Archive checksum matches the lockfile; VCS provenance is 21ac804a9 from wasm-bindgen/wasm-bindgen. The script reads target cfg and emits fixed cfg and link arguments only. Reviewed wasm ABI conversion traits, JS handle reference counts, closure ownership, slice and string bounds, exception paths, and target gates. This target-only crate is not linked on Pebble's native targets."
+
+[[audits.wasm-bindgen-macro]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.126"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is 21ac804a9 from wasm-bindgen/wasm-bindgen. The entry point has no unsafe code, build script, native code, or ambient capability. It delegates deterministic token parsing and generation to the separately audited macro-support crate."
+
+[[audits.wasm-bindgen-macro-support]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.126"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 21ac804a9 from wasm-bindgen/wasm-bindgen. No build script, process, network, or unrelated filesystem access. Reviewed bindgen attribute parsing, exported and imported ABI shims, descriptor generation, closure adapters, class and enum layout checks, and token emission. Unsafe code appears only in generated target-specific ABI operations with checked layouts."
+
+[[audits.wasm-bindgen-shared]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.126"
+notes = "Full source and build-script audit. Archive checksum matches the lockfile; VCS provenance is 21ac804a9 from wasm-bindgen/wasm-bindgen. The script hashes its own fixed schema source and optionally queries Git only for a version label; it writes Cargo environment values and has no network or native link. Runtime source has no unsafe code or ambient capability."
+
+[[audits.web-time]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.1.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.winapi]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.3.9"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS 796a8e6c2971dc2ff1bcff166e6671284f9b5b6b; source https://github.com/retep998/winapi-rs; no network feature is enabled."
+
+[[audits.winapi-i686-pc-windows-gnu]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.0"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS archive-only; source https://github.com/retep998/winapi-rs; no network feature is enabled."
+
+[[audits.winapi-util]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.1.11"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.winapi-x86_64-pc-windows-gnu]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.0"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS archive-only; source https://github.com/retep998/winapi-rs; no network feature is enabled."
+
+[[audits.windows-core]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.62.2"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 32c314449 from microsoft/windows-rs. No build script, proc macro, process, filesystem, or network behavior. Reviewed COM pointer ownership and QueryInterface, weak references, marshaler lifetimes, ABI conversions, BSTR and HSTRING wrappers, and reference counts. This target-only crate is not linked on Pebble's native targets."
+
+[[audits.windows-implement]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.60.2"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is 32c314449 from microsoft/windows-rs. No build script or ambient capability in production macro code. Reviewed COM implementation token generation, vtable layout, identity and QueryInterface dispatch, reference counting, tear-off objects, and emitted pointer writes; test-only rustfmt process use is excluded from builds."
+
+[[audits.windows-interface]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.59.3"
+notes = "Full proc-macro source audit. Archive checksum matches the lockfile; VCS provenance is 32c314449 from microsoft/windows-rs. No build script, native command, filesystem, or network access. Reviewed interface attribute parsing, GUID and vtable generation, inherited interface layout, ABI invocation, and emitted pointer casts."
+
+[[audits.windows-link]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.2.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is d468916ac from microsoft/windows-rs. The crate is a small declarative link macro with no unsafe code, build script, proc macro, runtime logic, or ambient capability. It is target-only and not linked on Pebble's native targets."
+
+[[audits.windows-result]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.4.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 32c314449 from microsoft/windows-rs. No build script, proc macro, process, filesystem, or network behavior. Reviewed HRESULT conversion, COM error-info ownership, BSTR lifetime, bindings, and thread-safe error wrappers; all FFI is target-gated."
+
+[[audits.windows-strings]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.5.1"
+notes = "Full source audit. Archive checksum matches the lockfile; VCS provenance is 32c314449 from microsoft/windows-rs. No build script, proc macro, process, filesystem, or network behavior. Reviewed HSTRING reference counts, UTF-16 length and terminator checks, PCWSTR and PWSTR slice construction, clone and drop balance, and null-pointer handling; all native calls are target-gated."
+
+[[audits.windows-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.59.0"
+notes = "Full target-only audit; archive checksum matches Cargo.lock; VCS 308e08ec259027ebbef11b8ef838923626bf821e; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.60.2"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows-sys]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.61.2"
+notes = "Full target-only audit; archive checksum matches Cargo.lock; VCS 32c3144490c016fe496a0aed769bce60987a2e9d; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows-targets]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full target-only audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows-targets]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.5"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_aarch64_gnullvm]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_aarch64_gnullvm]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_aarch64_msvc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_aarch64_msvc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_i686_gnu]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_i686_gnu]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_i686_gnullvm]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_i686_gnullvm]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_i686_msvc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_i686_msvc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_x86_64_gnu]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_x86_64_gnu]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_x86_64_gnullvm]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_x86_64_gnullvm]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.windows_x86_64_msvc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.52.6"
+notes = "Full build-script audit; archive checksum matches Cargo.lock; VCS db06b51c2ebb743efb544d40e3064efa49f28d38; source https://github.com/microsoft/windows-rs; no network feature is enabled."
+
+[[audits.windows_x86_64_msvc]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.53.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.winnow]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.4"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.wit-bindgen]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.57.1"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.yaml-rust2]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.11.0"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.zerocopy]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.8.54"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.zerocopy-derive]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "0.8.54"
+notes = "Task 12 full source audit of the exact locked release; archive checksum, registry provenance, local feature activation, build, proc-macro, native, unsafe, filesystem, process, and network surfaces reviewed; no exemption."
+
+[[audits.zmij]]
+who = "Richard Luo <richard.luo4@t-mobile.com>"
+criteria = "safe-to-deploy"
+version = "1.0.23"
+notes = "Full source and build-script audit. Archive SHA-256 matches the lockfile; VCS provenance is 7b7cc48 from dtolnay/zmij. Build script only queries configured rustc and OPT_LEVEL to emit cfg; no network, native link, or external input. This is not a proc-macro crate. Reviewed all unsafe table indices, aligned static SIMD loads, target-gated intrinsics and inert asm barriers, pointer copies/writes within the sealed 24-byte Buffer, initialized ASCII conversion, and exponent-derived ranges. Delta from cached 1.0.21 adds size cfgs and substantial formatting/SIMD optimization while preserving the sealed buffer and bounded float-domain invariants."

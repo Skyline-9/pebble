@@ -1,0 +1,21 @@
+---
+description: Check for stale or pending Pebble note updates and apply an agent-drafted patch.
+argument-hint: [note or claim id]
+allowed-tools: [update_list, update_apply, search, evidence_read]
+---
+
+# /update
+
+The user wants to reconcile knowledge notes with changed code. Arguments: `$ARGUMENTS`.
+
+Procedure:
+
+1. Call `update_list { repository: "." }` to list queued update packets (`pending_update` or `stale` claims).
+2. If `$ARGUMENTS` is given, filter to the matching note or claim id; otherwise show every queued packet.
+3. For each packet, review the old claim text, the changed evidence, and any broken citations it reports.
+4. Draft replacement prose for the managed region only. Use `search` and `evidence_read` to confirm current evidence. Never introduce a path or symbol absent from the evidence packet, and never touch text outside the managed region.
+5. Call `update_apply { repository: ".", claim_id: <id>, patch: <replacement> }`. Pebble validates the edit boundary, claim id, and citations before applying.
+6. If Pebble rejects the patch because the generation or worktree changed, call `update_list` again and retry once with the refreshed packet.
+7. Confirm to the user which claims were updated. The result is an unstaged Git diff for them to review and commit.
+
+If there are no queued updates: "No pending note updates for this repository."

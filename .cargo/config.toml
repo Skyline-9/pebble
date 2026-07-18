@@ -1,0 +1,5 @@
+[alias]
+lint = "clippy --workspace --all-targets --all-features -- -D warnings"
+test-all = "test --workspace --all-targets --all-features"
+size-check = "run -p xtask -- check-file-size"
+dependency-check = "run -p xtask -- check-dependency-records"

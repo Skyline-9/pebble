@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
 # gemini-cli-plugin/hooks/scripts/pre-compress.sh
-# Fires before Gemini compresses conversation history. Advisory-only in Gemini's contract —
-# we use this to re-render the pebble hot-cache so the post-compression session picks up a
-# fresh snapshot when SessionStart fires next.
+# Fires before Gemini compresses conversation history. In the old memory-vault model this
+# re-rendered a generated markdown snapshot before compaction. Pebble's knowledge notes are
+# already ordinary Markdown under `.pebble/knowledge/` and `~/.pebble/v1/personal/knowledge/`,
+# so there is no derived snapshot to materialize. Documented no-op, advisory-only.
 set -euo pipefail
-
-export PATH="$HOME/.bun/bin:$PATH"
 
 # Drain stdin — PreCompress passes {trigger: "auto"|"manual"}.
 cat > /dev/null || true
-
-# Materialize a fresh vault snapshot (cheap; readonly DB read + markdown write).
-pebble-mcp render-vault >/dev/null 2>&1 || true
 
 echo '{}'

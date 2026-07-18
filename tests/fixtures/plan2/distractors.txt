@@ -1,0 +1,2 @@
+Chronometer helper timing timer clock elapsed duration benchmark.
+This distractor intentionally lacks every exact acceptance symbol.
