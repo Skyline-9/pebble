@@ -60,7 +60,7 @@ cd pebble-mcp
 bun install
 bun run init          # creates ~/.pebble/{log.jsonl,projection.db,vault,trace.jsonl}
 bun link              # installs `pebble-mcp` on PATH
-bun test              # 74 tests
+bun test              # 78 tests
 
 # 2) Claude Code
 claude plugins marketplace add /absolute/path/to/pebble/claude-code-plugin
@@ -134,7 +134,7 @@ pebble/
 │   │   ├── hotcache/             # hot-cache builder (CC + Droid targets)
 │   │   ├── review/               # deterministic MVP reviewer + transcript parser
 │   │   └── paths.ts              # ~/.pebble layout
-│   └── tests/                    # 74 tests across 17 files
+│   └── tests/                    # 78 tests across 18 files
 ├── claude-code-plugin/           # `pebble@pebble-local` for Claude Code
 │   ├── plugin.json               # manifest + MCP server entry
 │   ├── commands/                 # /pebble, /remember, /forget, /recall, /profile
@@ -168,7 +168,7 @@ pebble/
 
 ```bash
 cd pebble-mcp
-bun test                 # 74 tests, 136 expect() calls
+bun test                 # 78 tests, 148 expect() calls
 bun run typecheck        # tsc --noEmit
 ```
 
@@ -181,6 +181,7 @@ Each plugin also has a smoke test at `<plugin>/scripts/smoke.sh`.
 | `pebble-mcp-mvp-v0.0.1` | Core library + MCP server + CLI |
 | `pebble-cc-plugin-mvp-v0.0.1` | Claude Code plugin |
 | `pebble-droid-plugin-mvp-v0.0.1` | Factory Droid plugin |
+| `pebble-gemini-plugin-mvp-v0.0.1` | Gemini CLI extension |
 | `pebble-mvp-v0.0.1` | Umbrella release |
 
 ## 📄 License
